@@ -1,7 +1,417 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html class="csstransforms csstransforms3d csstransitions">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="font-size: 23px;"><img src="Content/images/logo/logo-small.png" style="float:left;" />&nbsp;卢俊星的Resume</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Skill</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Contract</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2># 项目经历 </h2>
+                </div>
+            </div>
+            <div class="row centered" id="service-list">
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="http://www.comap.com/undergraduate/contests/">
+                        <img src="Content/images/project/comaplogo.gif" style="width: 165px; height: 96px;" />
+                    </a>
+                    <h4>MCM数学建模大赛</h4>
+                    <p>拿国际一等奖了</p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="http://www.mcm.edu.cn/">
+                        <img src="Content/images/project/cumcm.jpg" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>CUMCM建模大赛</h4>
+                    <p>获得国家一等奖</p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="http://www.cmzx.sh.cn/">
+                        <img src="Content/images/project/chongming.png" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>中学教务管理系统</h4>
+                    <p>完成了众包项目</p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="/hdyct/">
+                        <img src="Content/images/project/hdyct.jpg" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>海大云餐厅</h4>
+                    <p>曾开发微信公众平台</p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="/bfgy/">
+                        <img src="Content/images/project/bfgy.jpg" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>冰纷果园</h4>
+                    <p>运营过一家水果O2O平台</p>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="/more/">
+                        <img src="Content/images/project/ellipsis.png" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>更多</h4>
+                </div>
+
+            </div>
+        </div><!--/container -->
+    </div>
+
+    <div id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2># 职业技能 </h2>
+                </div>
+            </div>
+            <div class="row centered" id="service-list">
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a href="http://www.cspro.org/">
+                        <img src="Content/images/project/ccf.png" style="width: 96px; height: 96px; border-radius:50%; overflow:hidden;" />
+                    </a>
+                    <h4>CCF CSP认证</h4>
+                    <p>已通过JAVA类认证</p>
+                </div>
+            </div>
+        </div><!--/container -->
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="recent-events" class="col-md-6 col-md-push-6">
+                <h2> # 近期学习 </h2>
+
+                <div class="event" data-event-date="2016-03-26">
+                    <div class="event-title">
+                        <a href="/event/2016/haskell/">
+                            <h4>Haskell 函数式编程入门讲座</h4>
+                        </a>
+                    </div>
+                    <div class="event-meta">
+                        <span><strong>时间: </strong>2016-03-26 14:30 - 16:30 </span>
+                        <span><strong>地点:</strong> 四教 4302</span>
+                        <span class="label label-info">Finished</span>
+                    </div>
+                    <div class="event-abstract">
+                        如果你是一名程序员，也许你对函数式编程这一编程范式有所耳闻。函数式编程植根于上世纪30年代提出的λ演算，以函数作为程序的一等公民及构建程序的基本单位。随着数十年间编程语言理论研究的发展，函数式编程从理论基础到业界应用都有了长足的进步，除了象牙塔里的研究性语言以外，涌现了一批诸如Scala、Clojure、F#、Erlang等面向工业界应用的函数式语言，而不少老牌的主流语言如C++11、Java 8和新兴脚本语言如JavaScript、Python、Ruby等皆不同程度地...
+                    </div>
+                </div>
+
+                <div class="event" data-event-date="2016-03-06">
+                    <div class="event-title">
+                        <a href="/event/2016/openSUSE-42-1/">
+                            <h4>openSUSE 42.1 Release Party</h4>
+                        </a>
+                    </div>
+                    <div class="event-meta">
+                        <span><strong>时间: </strong>2016-03-06 14:00 - 16:30 </span>
+                        <span><strong>地点:</strong> 四教 4303</span>
+                        <span class="label label-info">Finished</span>
+                    </div>
+                    <div class="event-abstract">
+                        为庆祝 openSUSE 42.1 Leap 发布，我们和 openSUSE 社区将联合举办 Release Party. 这也是 2016 年 TUNA
+                        的第一场公开活动。
+
+                        这次活动分为演讲和动手玩两个环节，演讲内容包括：
+
+
+                        Why’s openSUSE matter  (by Alex Lau)
+                        openGL 3D in QEMU (by Lin Ma)
+                        openSUSE projects overview (by Weihua)
+
+
+                        演讲之后是动手...
+                    </div>
+                </div>
+
+                <div class="event" data-event-date="2015-11-29">
+                    <div class="event-title">
+                        <a href="/event/2015/android-x86/">
+                            <h4>Android-x86 系统级开发 Tutorial</h4>
+                        </a>
+                    </div>
+                    <div class="event-meta">
+                        <span><strong>时间: </strong>2015-11-29 13:00 - 18:00 </span>
+                        <span><strong>地点:</strong> FIT 楼 3-125</span>
+                        <span class="label label-info">Finished</span>
+                    </div>
+                    <div class="event-abstract">
+                        本次 Tutorial 由台湾知名的自由软件贡献者 黃志偉 主讲。
+
+
+                        时间: 11月29日(周日)  下午 13:00 - 18:00
+                        地点: 清华 FIT 楼 3-125 (一层)
+
+
+                        黃志偉目前就职于华硕公司，是 Android-x86 项目的主要开发者之一。本次报告的内容包括:
+
+
+                        Android-x86的应用领域
+                        Android-x86与AOSP的共性与差异
+                        Android-x86的Linux kenerl/AOSP的Linux kerne...
+                    </div>
+                </div>
+
+                <div class="event" data-event-date="2015-11-23">
+                    <div class="event-title">
+                        <a href="/event/2015/latex/">
+                            <h4>LaTeX 论文排版</h4>
+                        </a>
+                    </div>
+                    <div class="event-meta">
+                        <span><strong>时间: </strong>2015-11-23 19:00 - 21:00 </span>
+                        <span><strong>地点:</strong> 逸夫馆401培训教室</span>
+                        <span class="label label-info">Finished</span>
+                    </div>
+                    <div class="event-abstract">
+                        图书馆 2015—2016 学年度秋季学期专题培训讲座，
+                        将为大家介绍如何使用 LaTeX 排版论文：
+
+
+                        作为一种专业文档排版系统，LaTeX 目前已为国际学术出版界广泛使用。
+                        本讲座讲解LaTeX的基础知识、下载安装、模板使用，使读者掌握利用
+                        LaTeX 进行学术论文排版，以及使用 Thuthesis 进行清华学位论文排版
+                        的基本方法和技巧。
+
+
+                        适应对象：理工科研究生、本科生、博士后等
+
+                        讲座主体内容是介绍 ThuThesis 清华学位论文 LaTeX 模板的...
+                    </div>
+                </div>
+
+                <div class="event" data-event-date="2015-09-26">
+                    <div class="event-title">
+                        <a href="/event/2015/new-member-meetup/">
+                            <h4>新成员欢迎会 Welcome Meeting</h4>
+                        </a>
+                    </div>
+                    <div class="event-meta">
+                        <span><strong>时间: </strong>2015-09-26 19:20 - 21:00 </span>
+                        <span><strong>地点:</strong> 旧水303</span>
+                        <span class="label label-info">Finished</span>
+                    </div>
+                    <div class="event-abstract">
+                        欢迎各位新同学加入 TUNA，本学期共有 33 位同学加入，新成员见面会将于 9 月 26 日（星期六）晚 19:20 在旧水-303进行。
+
+                        本次活动主要内容包括:
+
+
+                        见面交流，知道大家长啥样，交朋友
+                        简单介绍 TUNA 的历史、活动内容、好玩的项目
+                        介绍 TUNA 邮件列表的正确使用方法、如何融入团队
+                        了解成员兴趣取♂向，安排本学期线下活动
+
+
+                        时值中秋，我们也为大家准备了月饼，欢迎前来搅基交流！
+
+                        Welcome to TUNA, we have...
+                    </div>
+                </div>
+
+                <div>
+                    <a href="/events/"><i class="fa fa-hand-o-right"></i> 所有活动</a>
+                </div>
+            </div>
+            <div id="recent-posts" class="col-md-6 col-md-pull-6">
+                <h2> # 个人文章 </h2>
+
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/blog/2015/sfd2015/">
+                            <h4><i class="fa fa-file-text-o"></i> 2015 软件自由日清华站活动报告</h4>
+                        </a>
+                    </div>
+                    <div class="post-meta">
+                        Justin Wong, 2015-9-19
+                    </div>
+                    <div class="post-abstract">
+                        金秋送爽，艳阳高照，2015 年 9 月 19 日下午两点，2015软件自由日清华站在清华大学新水利管欢乐开场。本次活动
+                        由 TUNA 协会和北京 GNU/Linux 用户组联合举办，且得到了 Ubuntu 社区、Fedora 社区、openSUSE 社区、Firefox 社区、
+                        阿里移动安全和七牛云存储等赞助方的大力支持，赞助方为此次活动提供了非常丰厚的礼品。
+
+
+
+
+
+                        首先是由 TUNA 现任会长 Justin Wong 致欢迎辞和介绍 TUNA 协会的现状，以及 ...
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/blog/2015/tex/">
+                            <h4><i class="fa fa-file-text-o"></i> 活动记录: TeX 与汉字处理</h4>
+                        </a>
+                    </div>
+                    <div class="post-meta">
+                        Justin Wong, 2015-5-15
+                    </div>
+                    <div class="post-abstract">
+                        5 月的北京，夜晚的阵阵清风吹过宁静清华园，空气中飘荡着初夏的味道，这是发布新版本的季节！
+
+                        2015 年 5 月 21 日，TUNA 协会邀请到了 pTex-ng 的作者 马起园(李阿玲)、
+                        中文 TeX 文档类/宏包 CTeX-kit 的开发者 刘海洋 还有 TUNA 协会成员，ThuThesis 维护者 赵涛(Alick Zhao) 等人，
+                        共同分享 TeX 与汉字处理的技术与应用，还有 pTeX-ng、CTeX 2.0、最新版 ThuThesis 特性的演示。
+
+
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/blog/2015/vbird/">
+                            <h4><i class="fa fa-file-text-o"></i> 鸟哥的 Linux 私房会</h4>
+                        </a>
+                    </div>
+                    <div class="post-meta">
+                        Justin Wong, 2015-3-29
+                    </div>
+                    <div class="post-abstract">
+                        2015 年 3 月 29 日，沙尘退去，阳光明媚，春暖花开。众多 GNU/Linux 爱好者的启蒙人，
+                        《鸟哥的 Linux 私房菜》作者 鸟哥·蔡德明 来到清华大学，在三教 3201 与同学们见面。
+
+                        上午 10 点，来自 openSUSE 社区的 Sunny，Max 和 鸟哥 一同到达会场，活动如期开始。
+
+
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/blog/2014/openSUSE_13_2/">
+                            <h4><i class="fa fa-file-text-o"></i> openSUSE 13.2 Release Party 活动记录</h4>
+                        </a>
+                    </div>
+                    <div class="post-meta">
+                        Justin Wong, 2014-11-16
+                    </div>
+                    <div class="post-abstract">
+                        2014 年 11 月 16 日，openSUSE 13.2 Release Party 清华站如期在中央主楼报告厅举办，
+                        本次活动由 openSUSE 社区发起，TUNA 协会协办，SUSE 公司提供了礼品等各项资金支持。
+
+                        活动中我们又见到了很多熟悉的面孔，绝对中立的 openSUSE 吸引到了来自北京各个开源社区同僚前来欢聚。
+
+
+
+                        下午两点，来自 TUNA 的 Justin Wong 宣布活动开始，本次活动的主题是「做一只安静的蜥蜴」，openSUSE 作为一个...
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/blog/2014/welcome-meeting/">
+                            <h4><i class="fa fa-file-text-o"></i> 2014 秋季新成员欢迎会</h4>
+                        </a>
+                    </div>
+                    <div class="post-meta">
+                        Justin Wong, 2014-11-1
+                    </div>
+                    <div class="post-abstract">
+                        2014 年 11 月 1 日，TUNA 那举行了创会以来首次新成员欢迎会，在本次活动中，除了新入会的同学，
+                        还有不少知其名而不知其面的同学和幽灵会员参与。
+
+                        最近上线的 gdanmaku 服务为本次活动带来了弹幕支持，害羞说话的同学们即可通过弹幕参与互动，活动在轻松快乐的气氛中开始。
+
+
+                    </div>
+                </div>
+
+                <div>
+                    <a href="/blog/"><i class="fa fa-hand-o-right"></i> 所有文章</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="join-tuna" class="col-md-12">
+                <h2> # 联系我 </h2>
+                <h4>如果你是技术公司的HR</h4>
+                <p>发送任意内容邮件到 <a href="mailto:tuna-general+subscribe@googlegroups.com">tuna-general+subscribe@googlegroups.com</a>, 并回复确认邮件。</p>
+                <h4>如果你是热爱学习的小伙伴</h4>
+                <p>除了订阅邮件列表，请再在 <a href="http://shetuan.student.tsinghua.edu.cn/f/ckstzy/20140027">校团委社团部平台</a> 点击 "我要加入" 加入协会。</p>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    vim: ts=2 sts=2 sw=2 expandtab
+    -->
+
+    <div id="footerwrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>清华大学 TUNA 协会原名清华大学学生网管会，其前身为清华大学电脑协会，是由清华大学网络技术和开源软件爱好者、技术宅组成的团体。</p>
+                </div>
+
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://groups.google.com/forum/#!forum/tuna-general"><i class="fa fa-envelope"></i> Mailing List</a>
+                            </li>
+                            <li>
+                                IRC: <a href="/irc/">#tuna at freenode</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/tuna/"><i class="fa fa-github"></i> GitHub </a>
+                            </li>
+                            <li>
+                                <a href="https://secure.flickr.com/groups/tuna/"><i class="fa fa-flickr"></i> Flickr</a>
+                            </li>
+                            <li>
+                                <a href="http://weibo.com/u/5402274706"><i class="fa fa-weibo"></i> 新浪微博</a>
+                            </li>
+                            <li>
+                                <a href="http://page.renren.com/601908241"><i class="fa fa-renren"></i> 人人公共主页</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <img class="img-responsive" src="Content/images/logo/logo-white.png" />
+                </div>
+            </div><!-- --/row ---->
+        </div><!-- --/container ---->
+    </div>
+
+
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </body>
 </html>
