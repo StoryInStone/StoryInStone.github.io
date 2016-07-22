@@ -1,0 +1,45 @@
+<div ui-content-for="title">
+  <span>我的微博</span>
+</div>
+<div class="scrollable" ui-state="searchBar">
+  <div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+    <input
+    ng-if="Ui.active('searchBar')"
+    type="search"
+    class="form-control scrollable-header"
+    placeholder="Search.." />
+    <div class="section">
+      <div class="panel panel-default" ng-repeat="idx in [1,2,3,4,5,6,7,8]">
+        <div class="panel-heading">
+          <div class="btn-group pull-right">
+            <a ui-turn-on='myDropdown{{idx}}' class='btn'>
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+            <ul
+              ui-state="myDropdown{{idx}}"
+              class="dropdown-menu"
+              ui-outer-click="Ui.turnOff('myDropdown' + idx)"
+              ui-outer-click-if="Ui.active('myDropdown' + idx)"
+              role="menu"
+              ui-show="myDropdown{{idx}}"
+              ui-turn-off="myDropdown{{idx}}">
+              <li><a>删除</a></li>
+              <li><a>修改</a></li>
+              <li class="divider"></li>
+              <li><a>置顶</a></li>
+            </ul>
+          </div>
+          <h3 class="panel-title">卢俊星Interstellar</h3>
+        </div>
+        <div class="panel-body">
+          {{lorem}}
+        </div>
+        <div class="btn-group justified">
+          <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i>123</a>
+          <a href="/docs" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i>321</a>
+          <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar">5252</i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
