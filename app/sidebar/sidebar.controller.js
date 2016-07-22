@@ -32,7 +32,7 @@
                 postContent: $scope.postContent,
                 password: $scope.password
             };
-            // var res = $http.post('//localhost:8080/web/register', dataObj);
+            // var res = $http.post('//139.129.22.161:8080/web/register', dataObj);
             // res.success(function(data, status, headers, config) {});
             // res.error(function(data, status, headers, config) {});
         }

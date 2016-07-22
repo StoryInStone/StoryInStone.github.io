@@ -4,12 +4,12 @@
     var app = angular
         .module('MobileAngularUiVC');
 
-    app.service('InterceptorService', function($rootScope, $location) {
+    app.service('InterceptorService', function($rootScope, $location, $cookies) {
 
         var service = this;
 
         service.request = function(config) {
-            var access_token = $rootScope.access_token;
+            var access_token = $cookies.authorization;
             if (access_token) {
                 config.headers.authorization = access_token;
             }

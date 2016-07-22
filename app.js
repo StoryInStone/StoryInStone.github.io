@@ -1,10 +1,11 @@
 var app = angular.module('MobileAngularUiVC', [
   'ngRoute',
+  'ngCookies',
   'mobile-angular-ui',
   'mobile-angular-ui.gestures'
 ]);
 
-app.constant('ENDPOINT_URI', 'http://localhost:8080/web/')
+app.constant('ENDPOINT_URI', 'http://139.129.22.161:8080/web/')
 
 app.config(function($routeProvider, $httpProvider) {
   $routeProvider.when('/', {
@@ -50,6 +51,10 @@ app.config(function($routeProvider, $httpProvider) {
 
 app.controller('MainController', function($rootScope, $scope, $location) {
 
+  $scope.link = function() {
+      history.back();
+  }
+
   $scope.bottomReached = function() {
     alert('已经到最底部了!');
   };
@@ -70,8 +75,5 @@ app.controller('MainController', function($rootScope, $scope, $location) {
   $rootScope.$on('$routeChangeSuccess', function() {
     $rootScope.loading = false;
   });
-
-  // Fake text i used here and there.
-  $rootScope.lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo, aliquid eaque soluta nihil eligendi adipisci error, illum corrupti nam fuga omnis quod quaerat mollitia expedita impedit dolores ipsam. Obcaecati.';
 
 });

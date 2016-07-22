@@ -5,9 +5,13 @@
 		.module('MobileAngularUiVC')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['$rootScope', '$scope', '$location', 'LoginService'];
+	LoginController.$inject = ['$rootScope', '$scope', '$location', '$cookies', 'LoginService'];
 
-	function LoginController($rootScope, $scope, $location, LoginService) {
+	function LoginController($rootScope, $scope, $location, $cookies, LoginService) {
+
+		if ($rootScope.auth) {
+			$location.path('/');
+		}
 
 		$scope.rememberMe = true;
 		$scope.username = null;
@@ -24,7 +28,9 @@
 			LoginService.login(dataObj)
 				.success(function(data, status, headers, config) {
 					if (status === 200) {
-						$rootScope.access_token = data;
+						$cookies.authorization = data.auth;
+						$rootScope.auth = data.auth;
+						$rootScope.username = data.username;
 						$rootScope.$broadcast('authorized');
 					}
 					if (status === 400) {

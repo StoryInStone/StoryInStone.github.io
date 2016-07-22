@@ -1,6 +1,9 @@
+<div ui-content-for="title">
+  <span>{{username}}</span>
+</div>
 <div class="scrollable" ng-controller="HomeController">
   <div class="scrollable-content">
-    <div class="list-group text-center">
+    <div class="list-group ">
       <div class="list-group-item list-group-item-home">
         <form role="form" ng-submit='post()'>
           <fieldset>
@@ -15,7 +18,7 @@
           </button>
         </form>
       </div>
-      <div class="list-group-item list-group-item-home">
+      <div class="list-group-item list-group-item-home text-center">
         <div>
           <i class="fa fa-gamepad feature-icon text-primary"></i>
         </div>
@@ -25,80 +28,40 @@
         </div>
       </div>
       <div class="section">
-        <div class="panel panel-default" ng-repeat="idx in [1,2,3,4,5]">
+        <div class="panel panel-default" ng-repeat="idx in records">
           <div class="panel-heading">
             <div class="btn-group pull-right">
-              <a ui-turn-on='myDropdown{{idx}}' class='btn'>
+              <a ui-turn-on='myDropdown{{idx.postId}}' class='btn'>
                 <i class="fa fa-ellipsis-v"></i>
               </a>
               <ul
-                ui-state="myDropdown{{idx}}"
+                ui-state="myDropdown{{idx.postId}}"
                 class="dropdown-menu"
-                ui-outer-click="Ui.turnOff('myDropdown' + idx)"
-                ui-outer-click-if="Ui.active('myDropdown' + idx)"
+                ui-outer-click="Ui.turnOff('myDropdown' + idx.postId)"
+                ui-outer-click-if="Ui.active('myDropdown' + idx.postId)"
                 role="menu"
-                ui-show="myDropdown{{idx}}"
-                ui-turn-off="myDropdown{{idx}}">
+                ui-show="myDropdown{{idx.postId}}"
+                ui-turn-off="myDropdown{{idx.postId}}">
                 <li><a>删除</a></li>
                 <li><a>修改</a></li>
                 <li class="divider"></li>
                 <li><a>置顶</a></li>
               </ul>
             </div>
-            <h3 class="panel-title">卢俊星Interstellar</h3>
+            <h3 class="panel-title">{{idx.person}}</h3>
           </div>
           <div class="panel-body">
-            {{lorem}}
+            {{idx.postContent}}
           </div>
           <div class="btn-group justified">
-            <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i>123</a>
-            <a href="/docs" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i>321</a>
-            <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar">5252</i> </a>
-          </div>
-        </div>
-      </div>
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <i class="fa fa-tachometer feature-icon  text-primary"></i>
-        </div>
-        <div>
-          <h3 class="home-heading">放置广告位</h3>
-          每五条微博一条广告哈哈哈哈哈哈哈哈哈哈.
-        </div>
-      </div>
-      <div class="section">
-        <div class="panel panel-default" ng-repeat="idx in [1,2,3,4,5]">
-          <div class="panel-heading">
-            <div class="btn-group pull-right">
-              <a ui-turn-on='myDropdown{{idx}}' class='btn'>
-                <i class="fa fa-ellipsis-v"></i>
-              </a>
-              <ul
-                ui-state="myDropdown{{idx}}"
-                class="dropdown-menu"
-                ui-outer-click="Ui.turnOff('myDropdown' + idx)"
-                ui-outer-click-if="Ui.active('myDropdown' + idx)"
-                role="menu"
-                ui-show="myDropdown{{idx}}"
-                ui-turn-off="myDropdown{{idx}}">
-                <li><a>删除</a></li>
-                <li><a>修改</a></li>
-                <li class="divider"></li>
-                <li><a>置顶</a></li>
-              </ul>
-            </div>
-            <h3 class="panel-title">卢俊星Interstellar</h3>
-          </div>
-          <div class="panel-body">
-            {{lorem}}
-          </div>
-          <div class="btn-group justified">
-            <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i>123</a>
-            <a href="/docs" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i>321</a>
-            <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar">5252</i> </a>
+            <a class="btn btn-navbar" ui-turn-on="comment" ng-click="openComment(idx.postId)"><i class="fa fa-navbar" ng-class="idx.isComment ? 'fa-comment' : 'fa-comment-o'"></i>{{idx.commentNum}}</a>
+            <a class="btn btn-navbar"><i class="fa fa-navbar" ng-class="idx.isLike ? 'fa-thumbs-up' : 'fa-thumbs-o-up'"></i>{{idx.likesNum}}</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div ui-content-for="modals">
+  <div ng-include="'/app/comment/comment.html'"></div>
 </div>
