@@ -1,4 +1,4 @@
-angular.module('demoApp', ['ngMaterial', 'md.data.table'])
+angular.module('WeixinMenuApp', ['ngMaterial', 'md.data.table'])
 
 .config(['$mdThemingProvider', function ($mdThemingProvider) {
     'use strict';
