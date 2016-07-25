@@ -7,7 +7,7 @@ var app = angular.module('WeixinMenuApp', ['ngMaterial', 'ngMessages', 'material
     .primaryPalette('blue');
 }]);
 
-app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', function($mdEditDialog, $q, $scope, $timeout) {
+app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '$http', function($mdEditDialog, $q, $scope, $timeout, $http) {
   'use strict';
 
   $scope.selected = [];
@@ -31,39 +31,7 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', f
   };
 
   $scope.desserts = {
-    "data": [{
-      "level": "一级菜单",
-      "father": "",
-      "name": "菜单1",
-      "type": "点击推事件",
-      "url": "http://",
-      "key": "menu_key",
-      "mediaId": "mediaId"
-    }, {
-      "level": "二级菜单",
-      "father": "菜单1",
-      "name": "菜单2",
-      "type": "点击推事件",
-      "url": "http://",
-      "key": "menu_key",
-      "mediaId": "mediaId"
-    }, {
-      "level": "一级菜单",
-      "father": "菜单",
-      "name": "菜单3",
-      "type": "点击推事件",
-      "url": "http://",
-      "key": "menu_key",
-      "mediaId": "mediaId"
-    }, {
-      "level": "一级菜单",
-      "father": "菜",
-      "name": "菜单4",
-      "type": "点击推事件",
-      "url": "http://",
-      "key": "menu_key",
-      "mediaId": "mediaId"
-    }]
+    "data": []
   };
 
   $scope.editUrl = function(event, dessert) {
@@ -157,7 +125,49 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', f
 
   $scope.loadStuff = function() {
     $scope.promise = $timeout(function() {
-      // loading
+      var res = $http.get("http://139.129.22.161/get_menu.php");
+      res.success(function(data) {
+        console.log(JSON.stringify(data));
+        $scope.desserts = {
+          "data": []
+        };
+        var buttons = data.menu["button"];
+        for (var i = 0; i < buttons.length; i++) {
+          var button = {
+            "level": "一级菜单",
+            "father": "",
+            "name": buttons[i].name,
+            "type": "",
+            "url": "",
+            "key": "",
+            "mediaId": ""
+          };
+          $scope.desserts.data.push(button);
+          for (var j = 0; j < buttons[i]["sub_button"].length; j++) {
+            var sub_button = {};
+            if (buttons[i]["sub_button"][j].type === "click") {
+              sub_button = {
+                "level": "二级菜单",
+                "father": buttons[i].name,
+                "name": buttons[i]["sub_button"][j].name,
+                "type": "点击推事件",
+                "key": buttons[i]["sub_button"][j].key
+              }
+            } else if (buttons[i]["sub_button"][j].type === "view") {
+              sub_button = {
+                "level": "二级菜单",
+                "father": buttons[i].name,
+                "name": buttons[i]["sub_button"][j].name,
+                "type": "跳转URL",
+                "url": buttons[i]["sub_button"][j].url,
+                "key": buttons[i]["sub_button"][j].key
+              }
+            }
+            $scope.desserts.data.push(sub_button);
+          }
+        }
+        console.log(JSON.stringify($scope.desserts));
+      });
     }, 2000);
   }
 
@@ -175,8 +185,10 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', f
   };
 
   $scope.remove = function() {
-    var index = $scope.desserts.data.indexOf($scope.selected[0]);
-    $scope.desserts.data.splice(index, 1);
+    if ($scope.selected.length > 0) {
+      var index = $scope.desserts.data.indexOf($scope.selected[0]);
+      $scope.desserts.data.splice(index, 1);
+    }
   };
 
   $scope.add = function() {
@@ -193,17 +205,56 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', f
   };
 
   $scope.confirm = function() {
-    var data = {"buttons": []};
+    var data = {
+      "button": []
+    };
     var buttons = $scope.desserts.data;
     for (var i = 0; i < buttons.length; i++) {
       if (buttons[i].level === "一级菜单") {
-        var button = {"name": "debug", "sub_button": []};
-        button.name = 
-          data["buttons"].push(buttons[i]);
+        var button = {
+          "name": "debug",
+          "sub_button": []
+        };
+        button.name = buttons[i].name;
+        data["button"].push(button);
+      }
+    }
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].level === "二级菜单") {
+        for (var j = 0; j < data["button"].length; j++) {
+          if (data["button"][j].name === buttons[i].father) {
+            var sub_button = {};
+            if (buttons[i].type === "点击推事件") {
+              sub_button = {
+                "type": "click",
+                "name": buttons[i].name,
+                "key": buttons[i].key
+              }
+            } else if (buttons[i].type === "跳转URL") {
+              sub_button = {
+                "type": "view",
+                "name": buttons[i].name,
+                "url": buttons[i].url
+              }
+            } else if (buttons[i].type === "扫码推事件") {
+              sub_button = {
+                "type": "scancode_waitmsg",
+                "name": buttons[i].name,
+                "url": buttons[i].url
+              }
+            }
+            data["button"][j]["sub_button"].push(sub_button);
+          }
         }
       }
     }
-    alert(data.buttons.length);
+    console.log(JSON.stringify(data));
+    var res = $http.get("http://139.129.22.161/create_menu.php?menu=" + JSON.stringify(data));
+    res.success(function(data) {
+      var errmsg = data;
+      console.log(errmsg);
+    });
+
   };
 
 
