@@ -245,13 +245,12 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
       if (buttons[i].level === "一级菜单") {
         var button = {
           "name": buttons[i].name,
-          "type": buttons[i].type,
+          "type": "click",
           "key": buttons[i].key,
           "url": buttons[i].url,
           "media_id": buttons[i].mediaId,
           "sub_button": []
         };
-        button.name = ;
         data["button"].push(button);
       }
     }
