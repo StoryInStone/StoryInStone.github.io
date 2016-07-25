@@ -233,7 +233,7 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
     } else {
       alert("新增的菜单按钮有误");
     }
-    
+
   };
 
   $scope.confirm = function() {
@@ -244,10 +244,14 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
     for (var i = 0; i < buttons.length; i++) {
       if (buttons[i].level === "一级菜单") {
         var button = {
-          "name": "debug",
+          "name": buttons[i].name,
+          "type": buttons[i].type,
+          "key": buttons[i].key,
+          "url": buttons[i].url,
+          "media_id": buttons[i].mediaId,
           "sub_button": []
         };
-        button.name = buttons[i].name;
+        button.name = ;
         data["button"].push(button);
       }
     }
