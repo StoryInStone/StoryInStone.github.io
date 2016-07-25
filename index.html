@@ -46,8 +46,12 @@
             <md-option ng-value="level" ng-repeat="level in ['一级菜单', '二级菜单']">{{level}}</md-option>
             </md-select>
           </td>
-          <td md-cell>{{dessert.father || '无'}}</td>
-          <td md-cell>{{dessert.name}}</td>
+          <td md-cell>
+            <md-select ng-model="dessert.father" placeholder="请选择父菜单" aria-label="Close">
+            <md-option ng-value="father" ng-repeat="father in fathers">{{father}}</md-option>
+            </md-select>
+          </td>
+          <td md-cell ng-click="editName($event, dessert)" ng-class="{'md-placeholder': !dessert.name}">{{dessert.name || '请填写菜单名称'}}</td>
           <td md-cell>
             <md-select ng-model="dessert.type" placeholder="请选择菜单类型" aria-label="Close">
             <md-option ng-value="type" ng-repeat="type in ['点击推事件', '跳转URL', '扫码推事件']">{{type}}</md-option>
@@ -79,57 +83,47 @@
     <div layout="column" ng-cloak class="md-inline-form">
       <md-content layout-padding>
       <div>
-        <form name="userForm">
+        <form name="buttonForm">
           <div layout-gt-xs="row">
             <md-input-container class="md-block" flex-gt-xs>
             <label>菜单等级</label>
-            <input ng-model="user.company" disabled>
+            <md-select ng-model="button.level">
+            <md-option ng-repeat="level in ['一级菜单', '二级菜单']" ng-value="level">
+            {{level}}
+            </md-option>
+            </md-select>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
             <label>父菜单</label>
-            <md-select ng-model="user.state">
-            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-            {{state.abbrev}}
-            </md-option>
+            <md-select ng-model="button.father" placeholder="请选择父菜单" aria-label="Close">
+            <md-option ng-value="father" ng-repeat="father in fathers">{{father}}</md-option>
             </md-select>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
             <label>菜单类型</label>
-            <md-select ng-model="user.state">
-            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-            {{state.abbrev}}
-            </md-option>
+            <md-select ng-model="button.type" placeholder="请选择菜单类型" aria-label="Close">
+            <md-option ng-value="type" ng-repeat="type in ['点击推事件', '跳转URL', '扫码推事件']">{{type}}</md-option>
             </md-select>
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
             <label>菜单名称</label>
-            <input ng-model="user.firstName">
+            <input ng-model="button.name">
             </md-input-container>
           </div>
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
             <label>跳转Url</label>
-            <input ng-model="user.address">
+            <input ng-model="button.url" placeholder="http://">
             </md-input-container>
           </div>
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm>
             <label>菜单Key值</label>
-            <input ng-model="user.address">
+            <input ng-model="button.key">
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm>
             <label>多媒体Id</label>
-            <input name="postalCode" ng-model="user.address" placeholder="12345"
-            required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-              <div ng-message="required" class="my-message">You must supply a postal code.</div>
-              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-                code.
-              </div>
-              <div ng-message="md-maxlength" class="my-message">
-                Don't use the long version silly...we don't need to be that specific...
-              </div>
-            </div>
+            <input ng-model="button.mediaId" placeholder="mediaId">
             </md-input-container>
           </div>
         </form>

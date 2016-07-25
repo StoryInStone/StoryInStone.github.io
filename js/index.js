@@ -88,6 +88,33 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
     });
   };
 
+  $scope.editName = function(event, dessert) {
+    var editDialog = {
+      modelValue: dessert.name,
+      placeholder: '请填写菜单名称',
+      save: function(input) {
+        if (input.$modelValue == null) {
+          input.$invalid = true;
+          return $q.reject();
+        }
+        dessert.name = input.$modelValue;
+      },
+      targetEvent: event,
+      title: '菜单名称',
+      validators: {
+        'md-maxlength': 30
+      }
+    };
+    var promise;
+    promise = $mdEditDialog.large(editDialog);
+    promise.then(function(ctrl) {
+      var input = ctrl.getInput();
+      input.$viewChangeListeners.push(function() {
+        input.$setValidity('test', input.$modelValue !== 'test');
+      });
+    });
+  };
+
   $scope.editMediaId = function(event, dessert) {
     var editDialog = {
       modelValue: dessert.mediaId,
@@ -123,6 +150,8 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
     return ['Candy', 'Ice cream', 'Other', 'Pastry'];
   };
 
+  $scope.fathers = [];
+
   $scope.loadStuff = function() {
     $scope.promise = $timeout(function() {
       var res = $http.get("http://139.129.22.161/get_menu.php");
@@ -143,6 +172,7 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
             "mediaId": ""
           };
           $scope.desserts.data.push(button);
+          $scope.fathers.push(buttons[i].name);
           for (var j = 0; j < buttons[i]["sub_button"].length; j++) {
             var sub_button = {};
             if (buttons[i]["sub_button"][j].type === "click") {
@@ -193,15 +223,17 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
 
   $scope.add = function() {
     var data = $scope.desserts.data;
-    data.push({
-      "level": "一级菜单",
-      "father": "菜",
-      "name": "菜单",
-      "type": "点击推事件",
-      "url": "http://",
-      "key": "menu_key",
-      "mediaId": "mediaId"
-    });
+    var button = $scope.button;
+    if (button.name.length > 0) {
+      if (button.level === "一级菜单") {
+        $scope.fathers.push(button.name);
+      }
+      data.push(button);
+      $scope.button = {};
+    } else {
+      alert("新增的菜单按钮有误");
+    }
+    
   };
 
   $scope.confirm = function() {
@@ -252,30 +284,27 @@ app.controller('MenuController', ['$mdEditDialog', '$q', '$scope', '$timeout', '
     var res = $http.get("http://139.129.22.161/create_menu.php?menu=" + JSON.stringify(data));
     res.success(function(data) {
       var errmsg = data;
+      if (errmsg === "ok") {
+        alert("微信菜单更新成功");
+      } else {
+        alert("微信菜单更新失败")
+      }
       console.log(errmsg);
     });
 
   };
 
 
-  $scope.user = {
-    title: 'Developer',
-    email: 'ipsum@lorem.com',
-    firstName: '',
-    lastName: '',
-    company: 'Google',
-    address: '1600 Amphitheatre Pkwy',
-    city: 'Mountain View',
-    state: 'CA',
-    biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-    postalCode: '94043'
+  $scope.button = {
+    "level": "",
+    "father": "",
+    "name": "",
+    "type": "",
+    "url": "",
+    "key": "",
+    "mediaId": ""
   };
-  $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-    'WY').split(' ').map(function(state) {
-    return {
-      abbrev: state
-    };
-  });
+
+
 
 }]);
