@@ -7,7 +7,7 @@
 var x=document.getElementById("demo");
 function getLocation()
   {
-    while (true) {
+    //while (true) {
 
 
   if (navigator.geolocation)
@@ -15,7 +15,7 @@ function getLocation()
     navigator.geolocation.getCurrentPosition(showPosition);
     }
   else{x.innerHTML="该浏览器不支持获取地理位置。";}
-  }
+ // }
   }
 function showPosition(position)
   {
