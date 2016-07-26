@@ -1,27 +1,31 @@
 <!DOCTYPE>
 <html>
-<body>
-<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
-<button onclick="getLocation()">点我</button>
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-  {
-
-
-
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
+  <body>
+    <div id="demo">Location:</div>
+    <button onclick="geoFindMe()">Click</button>
+    <script>
+    var output = document.getElementById("demo");
+    var geo_options = {
+    enableHighAccuracy: true,
+    maximumAge        : 30000,
+    timeout           : 27000
+    };
+    function geoFindMe() {
+    if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
     }
-  else{x.innerHTML="该浏览器不支持获取地理位置。";}
-  
-  }
-function showPosition(position)
-  {
-  x.innerHTML="纬度: " + position.coords.latitude + 
-  "<br>经度: " + position.coords.longitude;	
-  }
-</script>
-</body>
+    function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    };
+    function error() {
+    output.innerHTML = "Unable to retrieve your location";
+    };
+    output.innerHTML = "<p>Locating…</p>";
+    navigator.geolocation.getCurrentPosition(success, error);
+    }
+    </script>
+  </body>
 </html>
