@@ -5,9 +5,9 @@
         .module('vcApp')
         .factory('Register', Register);
 
-    Register.$inject = ['$resource'];
+    Register.$inject = ['$resource', 'END_POINT'];
 
-    function Register ($resource) {
-        return $resource('api/register', {}, {});
+    function Register ($resource, END_POINT) {
+        return $resource(END_POINT + 'api/register', {}, {});
     }
 })();

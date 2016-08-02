@@ -5,5 +5,6 @@
         .module('vcApp')
         .constant('VERSION', "0.0.1-SNAPSHOT")
         .constant('DEBUG_INFO_ENABLED', true)
+        .constant('END_POINT', "//localhost:8080/")
 ;
 })();

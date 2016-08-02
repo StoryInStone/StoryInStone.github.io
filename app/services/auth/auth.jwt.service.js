@@ -7,7 +7,7 @@
 
     AuthServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q'];
 
-    function AuthServerProvider ($http, $localStorage, $sessionStorage, $q) {
+    function AuthServerProvider($http, $localStorage, $sessionStorage, $q) {
         var service = {
             getToken: getToken,
             login: login,
@@ -18,27 +18,37 @@
 
         return service;
 
-        function getToken () {
+        function getToken() {
             return $localStorage.authenticationToken || $sessionStorage.authenticationToken;
         }
 
-        function login (credentials) {
+        function login(credentials) {
 
             var data = {
                 username: credentials.username,
                 password: credentials.password,
                 rememberMe: credentials.rememberMe
             };
-            return $http.post('//localhost:8080/api/authenticate', data).success(authenticateSuccess);
+            console.log(data);
+            return $http.post('//localhost:8080/api/authenticate', data).then(authenticateSuccess, authenticateFail);
 
-            function authenticateSuccess (data, status, headers) {
-                console.log(headers('Authorization'));
-                var bearerToken = headers('Authorization');
-                if (angular.isDefined(bearerToken) && bearerToken.slice(0, 7) === 'Bearer ') {
-                    var jwt = bearerToken.slice(7, bearerToken.length);
-                    service.storeAuthenticationToken(jwt, credentials.rememberMe);
-                    return jwt;
-                }
+            function authenticateSuccess(response) {
+                console.log(response.data.id_token);
+                // console.log(headers('Authorization'));
+                // console.log(data);
+                // var bearerToken = headers('Authorization');
+                // if (angular.isDefined(bearerToken) && bearerToken.slice(0, 7) === 'Bearer ') {
+                //     var jwt = bearerToken.slice(7, bearerToken.length);
+                //     service.storeAuthenticationToken(jwt, credentials.rememberMe);
+                //     return jwt;
+                // }
+                var jwt = response.data.id_token;
+                service.storeAuthenticationToken(jwt, credentials.rememberMe);
+                return jwt;
+            }
+
+            function authenticateFail(data, headers, status) {
+                
             }
         }
 
@@ -57,14 +67,14 @@
 
         function storeAuthenticationToken(jwt, rememberMe) {
             console.log("auth-jwt:", jwt);
-            if(rememberMe){
+            if (rememberMe) {
                 $localStorage.authenticationToken = jwt;
             } else {
                 $sessionStorage.authenticationToken = jwt;
             }
         }
 
-        function logout () {
+        function logout() {
             delete $localStorage.authenticationToken;
             delete $sessionStorage.authenticationToken;
         }
