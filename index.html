@@ -15,6 +15,8 @@
 		var map = new BMap.Map("allmap");
 		map.centerAndZoom(new BMap.Point(110.335101, 20.062254), 15);
 		var convertor = new BMap.Convertor();
+		var carMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
+		map.addOverlay(carMk);
 		setTimeout(function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.watchPosition(showPosition);
@@ -30,7 +32,8 @@
 		}
 		function translateCallback(data) {
 			if(data.status === 0) {
-			alert(data.points[0])
+				carMk.setPosition(data.points[0]);
+				map.setCenter(data.points[0]);
 		}
 		}
 		</script>
