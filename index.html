@@ -39,9 +39,14 @@
 		points.push(lianyiguan);
 		points.push(beimen);
 		points.push(xinxixueyuan);
+		var geo_options = {
+  		enableHighAccuracy: true, 
+  		maximumAge        : 30000, 
+  		timeout           : 27000
+		};
 		setTimeout(function() {
 		if (navigator.geolocation) {
-		navigator.geolocation.watchPosition(showPosition);
+		navigator.geolocation.watchPosition(showPosition，geo_options);
 		}
 		}, 1500);
 		function showPosition(position) {
