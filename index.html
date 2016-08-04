@@ -18,16 +18,9 @@
 		var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(300,157));
 		var carMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254), {icon:myIcon});
 		var targetMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
-		var opts = {
-		width : 200,     // 信息窗口宽度
-		height: 100,     // 信息窗口高度
-		title : "海底捞王府井店" , // 信息窗口标题
-		enableMessage:true,//设置允许信息窗发送短息
-		message:"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
-		}
-		var infoWindow = new BMap.InfoWindow("地址：海南大学信息学院", opts);
 		map.addOverlay(carMk);
 		map.addOverlay(targetMk);
+		targetMk..setAnimation(BMAP_ANIMATION_BOUNCE);
 		var points = [];
 		var sanjiao = new BMap.Point(110.332721, 20.064329);
 		var shijiao = new BMap.Point(110.333646, 20.065055);
