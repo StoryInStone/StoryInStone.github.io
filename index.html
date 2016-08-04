@@ -19,6 +19,7 @@
 		var targetMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
 		map.addOverlay(carMk);
 		map.addOverlay(targetMk);
+		targetMk.setAnimation(BMAP_ANIMATION_BOUNCE); 
 
 		var points = [];
 		var sanjiao = new BMap.Point(110.332721, 20.064329);
@@ -63,7 +64,7 @@
 					}
 				}
 				targetMk.setPosition(targetPoints[index]);
-				map.centerAndZoom(targetPoints[index]);
+				map.centerAndZoom(targetPoints[index], 20);
 		}
 		}
 		
