@@ -16,7 +16,22 @@
 		map.centerAndZoom(new BMap.Point(110.335101, 20.062254), 20);
 		var convertor = new BMap.Convertor();
 		var carMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
+		var targetMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
 		map.addOverlay(carMk);
+		map.addOverlay(targetMk);
+
+		var points = [];
+		var sanjiao = new BMap.Point(110.332721, 20.064329);
+		var shijiao = new BMap.Point(110.333646, 20.065055);
+		var lianyiguan = new BMap.Point(110.333763, 20.063391);
+		var beimen = new BMap.Point(110.333111, 20.067152);
+		var xinxixueyuan = new BMap.Point(110.33114, 20.06598);
+		points.push(sanjiao);
+		points.push(shijiao);
+		points.push(lianyiguan);
+		points.push(beimen);
+		points.push(xinxixueyuan);
+
 		setTimeout(function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.watchPosition(showPosition);
@@ -33,9 +48,21 @@
 		function translateCallback(data) {
 			if(data.status === 0) {
 				carMk.setPosition(data.points[0]);
-				var pointB = new BMap.Point(110.335101, 20.062254);
-				alert(map.getDistance(data.points[0], pointB).toFixed(2));
-				map.setCenter(data.points[0]);
+				var targetPoints = [];
+				for (var i = points.length - 1; i >= 0; i--) {
+					if (map.getDistance(data.points[0], points[i]).toFixed(2) < 50) {
+						targetPoints.push(points[i]);
+					}
+				}
+				var min = 1000;
+				var index = -1;
+				for (var i = targetPoints.length - 1; i >= 0; i--) {
+					if (map.getDistance(data.points[0], targetPoints[i]) < min) {
+						min = targetPoints;
+						index = i;
+					}
+				}
+				alert(targetPoints[i]);
 		}
 		}
 		
