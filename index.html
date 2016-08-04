@@ -50,7 +50,7 @@
 				carMk.setPosition(data.points[0]);
 				var targetPoints = [];
 				for (var i = points.length - 1; i >= 0; i--) {
-					if (map.getDistance(data.points[0], points[i]).toFixed(2) < 50) {
+					if (map.getDistance(data.points[0], points[i]).toFixed(2) < 100) {
 						targetPoints.push(points[i]);
 					}
 				}
