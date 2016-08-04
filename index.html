@@ -22,9 +22,9 @@
 		map.addOverlay(targetMk);
 		var sContent =
 		"<div>" +
-					"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
-					"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
-					"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+			"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+			"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+			"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
 		"</div>";
 		var infoWindow = new BMap.InfoWindow(sContent);
 		var index = -1;
@@ -34,15 +34,25 @@
 		var lianyiguan = new BMap.Point(110.333763, 20.063391);
 		var beimen = new BMap.Point(110.333111, 20.067152);
 		var xinxixueyuan = new BMap.Point(110.33114, 20.06598);
+		var youyongchi = new BMap.Point(110.332527, 20.06177);
+		var diyiyundongchang = new BMap.Point(110.335757, 20.063137);
+		var liuxueshengsushelou = new BMap.Point(110.333897, 20.0618);
+		var xueshengfuwu = new BMap.Point(110.338465, 20.062135);
+		var liushitang = new BMap.Point(110.334499, 20.061851);
 		points.push(sanjiao);
 		points.push(shijiao);
 		points.push(lianyiguan);
 		points.push(beimen);
 		points.push(xinxixueyuan);
+		points.push(youyongchi);
+		points.push(diyiyundongchang);
+		points.push(liuxueshengsushelou);
+		points.push(xueshengfuwu);
+		points.push(liushitang);
 		var geo_options = {
-  		enableHighAccuracy: true, 
-  		maximumAge        : 30000, 
-  		timeout           : 27000
+		enableHighAccuracy: true,
+		maximumAge        : 30000,
+		timeout           : 27000
 		};
 		setTimeout(function() {
 		if (navigator.geolocation) {
