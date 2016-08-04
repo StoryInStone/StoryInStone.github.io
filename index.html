@@ -33,9 +33,12 @@
 		function translateCallback(data) {
 			if(data.status === 0) {
 				carMk.setPosition(data.points[0]);
+				var pointB = new BMap.Point(110.335101, 20.062254);
+				alert(map.getDistance(data.points[0], pointB).toFixed(2));
 				map.setCenter(data.points[0]);
 		}
 		}
+		
 		</script>
 	</body>
 </html>
