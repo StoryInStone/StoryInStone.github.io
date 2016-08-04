@@ -57,7 +57,7 @@
 				var min = 1000;
 				var index = -1;
 				for (var i = targetPoints.length - 1; i >= 0; i--) {
-					if (map.getDistance(data.points[0], targetPoints[i]) < min) {
+					if (map.getDistance(data.points[0], targetPoints[i]).toFixed(2) < min) {
 						min = targetPoints;
 						index = i;
 					}
