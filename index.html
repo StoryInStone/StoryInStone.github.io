@@ -18,28 +18,135 @@
 		var geolocation = new BMap.Geolocation();
 		var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/fox.gif", new BMap.Size(300,157));
 		var carMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254), {icon:myIcon});
-		var targetMk = new BMap.Marker(new BMap.Point(110.335101, 20.062254));
+		var target = new BMap.Point(110.335101, 20.062254);
+		var targetMk = new BMap.Marker(target);
 		map.addOverlay(carMk);
 		map.addOverlay(targetMk);
-		var sContent =
+		var sContent = [];
+		var content_sanjiao =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>三号教学楼</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>三号教学楼，如果说海口的地标是世纪大桥，那么海大的标志性建筑就是三号教学楼。从北门进入后最先看到，也是海大最明显的教学楼。附有钟楼是其最大特点，是新生录取通知书上的建筑。</p>" +
+		"</div>";
+		var content_shijiao =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>四号教学楼</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>海南大学四号教学楼靠近海大北门，位于联谊馆对面，西面与三号教学楼隔路相望，东面买对篮球场和网球场。4号教学楼比较新，分为南楼和北楼两个区域，六楼北侧是网络教育中心。距离旅院食堂很近。</p>" +
+		"</div>";
+		var content_lianyiguan =
 		"<div>" +
 								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
 								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
 								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
 		"</div>";
-		var infoWindow = new BMap.InfoWindow(sContent);
+		var content_beimen =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学正大门</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>朱镕基总理为海南大学题字朱镕基总理为海南大学题字朱镕基总理为海南大学题字朱镕基总理为海南大学题字...</p>" +
+		"</div>";
+		var content_xinxixueyuan =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+		"</div>";
+		var content_youyongchi =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+		"</div>";
+		var content_diyiyundongchang =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>第一田径场</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>第一田径场位于4号寝室楼对面，设有观众看台区域，是学校举行运动会等大型户外活动的地方。</p>" +
+		"</div>";
+		var content_liuxueshengsushelou =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>第一田径场</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>第一田径场位于4号寝室楼对面，设有观众看台区域，是学校举行运动会等大型户外活动的地方。</p>" +
+		"</div>";
+		var content_xueshengfuwu =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+		"</div>";
+		var content_liushitang =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+		"</div>";
+		var content_diertianjingchang =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>第二田径运动场</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>第二田径运动场为标准塑胶跑道、人造草足球场的综合田径运动场。其建设内容包括修建长400米，宽9.76米，厚1.3厘米的塑胶跑道及缓冲区、半圆区，人造草足球场、跑道排水系统等。总用地面积约21000平方米。</p>" +
+		"</div>";
+		var content_gonggongzaotang =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>为解决多数寝室楼无法洗热水澡的问题，海南大学第一公共浴室于2015年竣工，公共浴室北临第五食堂，南临14号公寓，东临9号寓公，西临11号公寓，内为单间独立澡房，为广大学生提供了便利。</p>" +
+		"</div>";
+		var content_wushitangzhengmeng =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+		"</div>";
+		var content_xinshangyejie =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>新商业街</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>位置较为偏僻，在十号寝室楼东侧，是最新的商业街...</p>" +
+		"</div>";
+		var content_siyuanxuetang =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>思源学堂</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>思源学堂即学生活动中心，建筑面积7432平方米，主体4层（最高部分）框架结构，工程于2009年12月开工建设，2011年9月落成典礼。该楼功能主要包括报告厅、展厅、舞厅以及社团活动室、办公室等，其中报告厅可同时容纳1028人就席思源学堂报告厅用于举行学校及海南省重大活动。2015年3月，彭丽媛女士来到海南大学思源学堂，出席“艾滋病／结核病防治宣传校园行——走进海南大学”活动。来华出席博鳌亚洲论坛2015年年会的赞比亚总统夫人埃斯特、盖茨基金会主席比尔•盖茨和部分驻华使节、国际组织驻华代表也出席活动。</p>" +
+		"</div>";
+		sContent.push(content_sanjiao);
+		sContent.push(content_shijiao);
+		sContent.push(content_lianyiguan);
+		sContent.push(content_beimen);
+		sContent.push(content_xinxixueyuan);
+		sContent.push(content_youyongchi);
+		sContent.push(content_diyiyundongchang);
+		sContent.push(content_liuxueshengsushelou);
+		sContent.push(content_xueshengfuwu);
+		sContent.push(content_liushitang);
+		sContent.push(content_diertianjingchang);
+		sContent.push(content_gonggongzaotang);
+		sContent.push(content_wushitangzhengmeng);
+		sContent.push(content_xinshangyejie);
+		sContent.push(content_siyuanxuetang);
 		var index = -1;
 		var points = [];
+		var pts = [];
+		var random = -1;
 		var sanjiao = new BMap.Point(110.332721, 20.064329);
 		var shijiao = new BMap.Point(110.333646, 20.065055);
 		var lianyiguan = new BMap.Point(110.333763, 20.063391);
 		var beimen = new BMap.Point(110.333111, 20.067152);
 		var xinxixueyuan = new BMap.Point(110.33114, 20.06598);
 		var youyongchi = new BMap.Point(110.332527, 20.06177);
-		var diyiyundongchang = new BMap.Point(110.335757, 20.063137);
+		var diyiyundongchang = new BMap.Point(110.3356630000, 20.0631500000);
 		var liuxueshengsushelou = new BMap.Point(110.333897, 20.0618);
 		var xueshengfuwu = new BMap.Point(110.338465, 20.062135);
 		var liushitang = new BMap.Point(110.334499, 20.061851);
+		var diertianjingchang = new BMap.Point(110.3315475358, 20.0625301865);
+		var gonggongzaotang = new BMap.Point(110.3355460000, 20.0611090000);
+		var wushitangzhengmeng = new BMap.Point(110.3357403988, 20.0616534282);
+		var xinshangyejie = new BMap.Point(110.3374908770, 20.0603232166);
+		var siyuanxuetang = new BMap.Point(110.3337075358, 20.0628101865);
 		points.push(sanjiao);
 		points.push(shijiao);
 		points.push(lianyiguan);
@@ -50,28 +157,52 @@
 		points.push(liuxueshengsushelou);
 		points.push(xueshengfuwu);
 		points.push(liushitang);
+		points.push(diertianjingchang);
+		points.push(gonggongzaotang);
+		points.push(wushitangzhengmeng);
+		points.push(xinshangyejie);
+		points.push(siyuanxuetang);
+		var driving = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});    //驾车实例
+		driving.search(beimen, siyuanxuetang);
+		driving.setSearchCompleteCallback(function(){
+			pts = driving.getResults().getPlan(0).getRoute(0).getPath();
+		});
 		function geo() {
 		geolocation.getCurrentPosition(function(r){
 		if(this.getStatus() == BMAP_STATUS_SUCCESS){
-			carMk.setPosition(r.point);
-			map.panTo(r.point);
+			// carMk.setPosition(r.point);
+			// map.panTo(r.point);
 			var targetPoints = [];
+			if (random > pts.length - 2) {
+				random = -1;
+			}
+			random = random + 1;
+			var atPoint = pts[random];
+			carMk.setPosition(atPoint);
+			map.panTo(atPoint);
 			for (var i = points.length - 1; i >= 0; i--) {
-				if (map.getDistance(r.point, points[i]).toFixed(2) < 100) {
+				if (map.getDistance(atPoint, points[i]).toFixed(2) < 100) {
 					targetPoints.push(points[i]);
 				}
 			}
 			var min = 1000;
-			var oldIndex = index;
-			for (var i = targetPoints.length - 1; i >= 0; i--) {
-				if (map.getDistance(r.point, targetPoints[i]).toFixed(2) < min) {
-					min = targetPoints;
-					index = i;
+			var oldTarget = target;
+			for (var j = targetPoints.length - 1; j >= 0; j--) {
+				var distance = map.getDistance(atPoint, targetPoints[j]).toFixed(2);
+				if (distance < min) {
+					min = distance;
+					target = targetPoints[j];
 				}
 			}
-			if (oldIndex != index) {
-				targetMk.setPosition(targetPoints[index]);
-				map.openInfoWindow(infoWindow, targetPoints[index]);
+			if (oldTarget !== target) {
+				targetMk.setPosition(target);
+				var infoIndex = 0;
+				for (var k = points.length - 1; k >= 0; k--) {
+					if (points[k] == target) {
+						infoIndex = k;
+					}
+				}
+				map.openInfoWindow(new BMap.InfoWindow(sContent[infoIndex]), target);
 			}
 		}
 		},{enableHighAccuracy: true})
