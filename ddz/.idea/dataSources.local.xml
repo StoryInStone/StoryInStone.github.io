@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - spider@localhost" uuid="e0891091-698d-42a1-86db-b78d8be38c8d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>spider:</introspection-scope>
+      <resolve-scope>spider:</resolve-scope>
+    </data-source>
+    <data-source name="MySQL - spider@139.196.205.164" uuid="db6f3f1a-ed33-4cb7-b2c3-d9e1afde39e3">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>spider:</introspection-scope>
+      <resolve-scope>spider:</resolve-scope>
+    </data-source>
+    <data-source name="MySQL - haozu_raw_text@localhost" uuid="943cc72e-01b7-49df-8456-f1d3588d6942">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>haozu_raw_text:</introspection-scope>
+      <resolve-scope>haozu_raw_text:</resolve-scope>
+    </data-source>
+  </component>
+</project>

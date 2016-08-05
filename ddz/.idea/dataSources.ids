@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - spider@localhost" uuid="e0891091-698d-42a1-86db-b78d8be38c8d">
+    <database-info product="MySQL" version="5.5.5-10.0.20-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="spider">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="vc"/>
+      <schema id="6" name="visualcommunity"/>
+      <table id="7" parent="1" name="building"/>
+      <table id="8" parent="1" name="space"/>
+      <column id="9" parent="7" name="id">
+        <comment>consider uuid</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="10" parent="7" name="code">
+        <comment>楼盘代码</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="11" parent="7" name="ukey">
+        <comment>每个building唯一标示，必须与版本配合才能作为主键</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="12" parent="7" name="ver">
+        <comment>版本</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="13" parent="7" name="keyword_tag">
+        <comment>楼盘关键字</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="14" parent="7" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="15" parent="7" name="asset_id">
+        <comment>资产id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="16" parent="7" name="building_grade_id">
+        <comment>楼盘等级id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="17" parent="7" name="market_id">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="18" parent="7" name="submarket_id">
+        <comment>商圈id
+</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="19" parent="7" name="creator">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="20" parent="7" name="owner">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="21" parent="7" name="admin">
+        <comment>资产管理员</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="22" parent="7" name="building_type">
+        <comment>建筑类型</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="23" parent="7" name="building_name_cn">
+        <comment>建筑中文名</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="24" parent="7" name="building_name_en">
+        <comment>建筑英文名</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="25" parent="7" name="building_name_other">
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="26" parent="7" name="latitude">
+        <comment>纬度</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="27" parent="7" name="longitude">
+        <comment>经度</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="28" parent="7" name="address_cn">
+        <comment>地址中文名</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="29" parent="7" name="vacancy_rate">
+        <comment>住房率%</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="30" parent="7" name="building_area">
+        <comment>建筑面积，total GFA</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="31" parent="7" name="rentable_area">
+        <comment>可租用面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="32" parent="7" name="available_area">
+        <comment>可用面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="33" parent="7" name="parking_ratio">
+        <comment>车位密度
+4:1000</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="34" parent="7" name="parking_type">
+        <comment>车位类型
+</comment>
+        <data-type>enum(&apos;reserved&apos;, &apos;unreserved&apos;, &apos;none&apos;)|0</data-type>
+      </column>
+      <column id="35" parent="7" name="parking_rate">
+        <comment>停车费</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="36" parent="7" name="parking_number">
+        <comment>停车数</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="37" parent="7" name="parking_reserved_number">
+        <comment>已预订停车位</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="38" parent="7" name="parking_area">
+        <comment>停车面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="39" parent="7" name="building_clear_height">
+        <comment>层高</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="40" parent="7" name="building_clear_height_net">
+        <comment>净层高</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="41" parent="7" name="building_year">
+        <comment>建筑年份</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="42" parent="7" name="building_completion_date">
+        <comment>竣工时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="43" parent="7" name="building_sprinkler">
+        <comment>灭火设施</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="44" parent="7" name="building_green_ratio">
+        <comment>楼盘绿化率
+</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="45" parent="7" name="floor_count">
+        <comment>总层数</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="46" parent="7" name="estimated_area">
+        <comment>估计面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="47" parent="7" name="actual_area">
+        <comment>实际面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="48" parent="7" name="min_floor_size">
+        <comment>最小层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="49" parent="7" name="max_floor_size">
+        <comment>最大层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="50" parent="7" name="typical_floor_area">
+        <comment>整层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="51" parent="7" name="lot_size">
+        <comment>总占地面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="52" parent="7" name="building_ac_type">
+        <comment>空调类型
+central
+indenpendent
+unknown</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="53" parent="7" name="building_ac_desc">
+        <comment>空调描述</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="54" parent="7" name="freshness_date">
+        <comment>建筑上市时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="55" parent="7" name="signage">
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="56" parent="7" name="tenancy">
+        <comment>单租户或多租户
+single
+multiple</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="57" parent="7" name="elevator_count">
+        <comment>电梯数</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="58" parent="7" name="elevator_desc">
+        <comment>电梯描述</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="59" parent="7" name="major_tenants">
+        <comment>主要租户</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="60" parent="7" name="phone">
+        <comment>楼盘联系电话</comment>
+        <data-type>varchar(2048)|0</data-type>
+      </column>
+      <column id="61" parent="7" name="efficiency_rate">
+        <comment>得房率</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="62" parent="7" name="handover_standard">
+        <comment>交付标准</comment>
+        <data-type>enum(&apos;whitebox&apos;, &apos;pre_built&apos;, &apos;raw/shell&apos;, &apos;as-built&apos;, &apos;2nd-generation&apos;, &apos;under_construction&apos;)|0</data-type>
+      </column>
+      <column id="63" parent="7" name="floor_loading">
+        <comment>楼板承重</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="64" parent="7" name="opex">
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="65" parent="7" name="current_opex_total">
+        <comment>当年管理费</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="66" parent="7" name="opex_type">
+        <comment>物业费类型</comment>
+        <data-type>enum(&apos;gross&apos;, &apos;net&apos;)|0</data-type>
+      </column>
+      <column id="67" parent="7" name="img_name">
+        <comment>用于传送文件名，无实际意义</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="68" parent="7" name="img_type">
+        <comment>用于传送文件名，无实际意义</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="69" parent="7" name="gmt_create">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="70" parent="7" name="gmt_modified">
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="71" parent="7" name="fk_building_asset_idx">
+        <columns>asset_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="72" parent="7" name="fk_building_building_grade_idx">
+        <columns>building_grade_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="73" parent="7" name="fk_building_creator_idx">
+        <columns>creator</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="74" parent="7" name="fk_building_key_ver_idx">
+        <columns>ukey
+ver</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="75" parent="7" name="fk_building_market_idx">
+        <columns>market_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="76" parent="7" name="fk_building_owner_idx">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="77" parent="7" name="fk_building_submarket_idx">
+        <columns>submarket_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="78" parent="7" name="fk_building_type_idx">
+        <columns>building_type</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="79" parent="7" name="fk_building_user_idx">
+        <columns>admin</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="80" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="81" parent="7" name="fk_building_asset">
+        <columns>asset_id</columns>
+        <ref-key>spider.asset(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="82" parent="7" name="fk_building_building_grade">
+        <columns>building_grade_id</columns>
+        <ref-key>spider.building_grade(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="83" parent="7" name="fk_building_market">
+        <columns>market_id</columns>
+        <ref-key>spider.market(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="84" parent="7" name="fk_building_submarket">
+        <columns>submarket_id</columns>
+        <ref-key>spider.submarket(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="85" parent="7" name="fk_building_creator">
+        <columns>creator</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="86" parent="7" name="fk_building_owner">
+        <columns>owner</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="87" parent="7" name="fk_building_admin">
+        <columns>admin</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="88" parent="7" name="fk_building_type">
+        <columns>building_type</columns>
+        <ref-key>spider.building_type(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="89" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="90" parent="8" name="ukey">
+        <comment>每个space唯一标示，必须与版本配合才能作为主键</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="91" parent="8" name="ver">
+        <comment>版本(0表示最新版，其余顺序递增)</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="92" parent="8" name="asset_id">
+        <comment>资产id，同一space的不同版本共享同一asset</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="93" parent="8" name="space_type_id">
+        <comment>房源类型id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="94" parent="8" name="building_id">
+        <comment>楼盘id，同一space的不同版本共享同一building</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="95" parent="8" name="contiguous_id">
+        <comment>连续空间id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="96" parent="8" name="creator">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="97" parent="8" name="owner">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="98" parent="8" name="admin">
+        <comment>资产管理员</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="99" parent="8" name="floor">
+        <comment>楼层</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="100" parent="8" name="unit">
+        <comment>单元号</comment>
+        <data-type>varchar(15)|0</data-type>
+      </column>
+      <column id="101" parent="8" name="min_divisible">
+        <comment>最小分隔面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="102" parent="8" name="size">
+        <comment>空间大小</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="103" parent="8" name="available_size">
+        <comment>可用面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="104" parent="8" name="current_size">
+        <comment>预测面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="105" parent="8" name="target_size">
+        <comment>实测面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="106" parent="8" name="rate">
+        <comment>每平米租金</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="107" parent="8" name="handover_standard">
+        <comment>交付标准</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="108" parent="8" name="is_occupied">
+        <comment>是否空置</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="109" parent="8" name="budget">
+        <comment>租金预算</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="110" parent="8" name="is_contiguous">
+        <comment>是否连续</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="111" parent="8" name="is_divisible">
+        <comment>是否可分割</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="112" parent="8" name="LCD">
+        <comment>合同起租日期</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="113" parent="8" name="LED">
+        <comment>合同到期时间
+Lease Term:（转租：自动确定＝LED-LCD; 非转租＝最大可租期限）</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="114" parent="8" name="date_vacant">
+        <comment>租户离开日期</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="115" parent="8" name="date_available">
+        <comment>房屋可用时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="116" parent="8" name="lease_type">
+        <comment>是否转租
+lease
+sublease
+unknown</comment>
+        <data-type>enum(&apos;lease&apos;, &apos;sublease&apos;, &apos;unknown&apos;)|0</data-type>
+      </column>
+      <column id="117" parent="8" name="space_clear_height">
+        <comment>净层高</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="118" parent="8" name="name">
+        <comment>房源标题</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="119" parent="8" name="opex">
+        <comment>房源物业费</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="120" parent="8" name="sell_rate">
+        <comment>出售价格</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="121" parent="8" name="shortest_lease_term">
+        <comment>最短租期，按月</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="122" parent="8" name="longest_lease_term">
+        <comment>最长租期，按月</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="123" parent="8" name="grace_lease_term">
+        <comment>免租期</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="124" parent="8" name="management_status">
+        <comment>状态，运营管理状态</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="125" parent="8" name="system_status">
+        <comment>系统状态，枚举NORMAL, FROZEN, ON_MARKET, OFF_MARKET, ARCHIVED, REMOVED</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="126" parent="8" name="market_status">
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="127" parent="8" name="date_listed">
+        <comment>on_market时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="128" parent="8" name="description">
+        <comment>描述</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="129" parent="8" name="memo">
+        <comment>备忘</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="130" parent="8" name="gmt_create">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="131" parent="8" name="gmt_modified">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="132" parent="8" name="date_archived">
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="133" parent="8" name="fc_building_space_idx">
+        <columns>building_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="134" parent="8" name="fc_space_asset_idx">
+        <columns>asset_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="135" parent="8" name="fk_space_contiguous_idx">
+        <columns>contiguous_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="136" parent="8" name="fk_space_creator_idx">
+        <columns>creator</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="137" parent="8" name="fk_space_gmt_create_idx">
+        <columns>gmt_create</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="138" parent="8" name="fk_space_key_ver_idx">
+        <columns>ukey
+ver</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="139" parent="8" name="fk_space_owner_idx">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="140" parent="8" name="fk_space_space_type_idx">
+        <columns>space_type_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="141" parent="8" name="fk_space_user_idx">
+        <columns>admin</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="142" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="143" parent="8" name="fk_space_asset">
+        <columns>asset_id</columns>
+        <ref-key>spider.asset(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="144" parent="8" name="fk_space_space_type">
+        <columns>space_type_id</columns>
+        <ref-key>spider.space_type(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="145" parent="8" name="fk_space_building">
+        <columns>building_id</columns>
+        <ref-key>~.building.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="146" parent="8" name="fk_space_contiguous">
+        <columns>contiguous_id</columns>
+        <ref-key>spider.contiguous(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="147" parent="8" name="fk_space_creator">
+        <columns>creator</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="148" parent="8" name="fk_space_owner">
+        <columns>owner</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="149" parent="8" name="fk_space_user">
+        <columns>admin</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - spider@139.196.205.164" uuid="db6f3f1a-ed33-4cb7-b2c3-d9e1afde39e3">
+    <database-info product="MySQL" version="5.5.47-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="spider">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="test"/>
+      <table id="4" parent="1" name="building"/>
+      <table id="5" parent="1" name="building_developer"/>
+      <table id="6" parent="1" name="building_operator"/>
+      <table id="7" parent="1" name="company"/>
+      <table id="8" parent="1" name="space"/>
+      <column id="9" parent="4" name="id">
+        <comment>consider uuid</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="10" parent="4" name="code">
+        <comment>楼盘代码</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="11" parent="4" name="ukey">
+        <comment>每个building唯一标示，必须与版本配合才能作为主键</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="12" parent="4" name="ver">
+        <comment>版本</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="13" parent="4" name="keyword_tag">
+        <comment>楼盘关键字</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="14" parent="4" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="15" parent="4" name="asset_id">
+        <comment>资产id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="16" parent="4" name="building_grade_id">
+        <comment>楼盘等级id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="17" parent="4" name="market_id">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="18" parent="4" name="submarket_id">
+        <comment>商圈id
+</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="19" parent="4" name="creator">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="20" parent="4" name="owner">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="21" parent="4" name="admin">
+        <comment>资产管理员</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="22" parent="4" name="building_type">
+        <comment>建筑类型</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="23" parent="4" name="building_name_cn">
+        <comment>建筑中文名</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="24" parent="4" name="building_name_en">
+        <comment>建筑英文名</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="25" parent="4" name="building_name_other">
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="26" parent="4" name="latitude">
+        <comment>纬度</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="27" parent="4" name="longitude">
+        <comment>经度</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="28" parent="4" name="address_cn">
+        <comment>地址中文名</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="29" parent="4" name="vacancy_rate">
+        <comment>住房率%</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="30" parent="4" name="building_area">
+        <comment>建筑面积，total GFA</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="31" parent="4" name="rentable_area">
+        <comment>可租用面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="32" parent="4" name="available_area">
+        <comment>可用面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="33" parent="4" name="parking_ratio">
+        <comment>车位密度
+4:1000</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="34" parent="4" name="parking_type">
+        <comment>车位类型
+</comment>
+        <data-type>enum(&apos;reserved&apos;, &apos;unreserved&apos;, &apos;none&apos;)|0</data-type>
+      </column>
+      <column id="35" parent="4" name="parking_rate">
+        <comment>停车费</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="36" parent="4" name="parking_number">
+        <comment>停车数</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="37" parent="4" name="parking_reserved_number">
+        <comment>已预订停车位</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="38" parent="4" name="parking_area">
+        <comment>停车面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="39" parent="4" name="building_clear_height">
+        <comment>层高</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="40" parent="4" name="building_clear_height_net">
+        <comment>净层高</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="41" parent="4" name="building_year">
+        <comment>建筑年份</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="42" parent="4" name="building_completion_date">
+        <comment>竣工时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="43" parent="4" name="building_sprinkler">
+        <comment>灭火设施</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="44" parent="4" name="building_green_ratio">
+        <comment>楼盘绿化率
+</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="45" parent="4" name="floor_count">
+        <comment>总层数</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="46" parent="4" name="estimated_area">
+        <comment>估计面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="47" parent="4" name="actual_area">
+        <comment>实际面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="48" parent="4" name="min_floor_size">
+        <comment>最小层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="49" parent="4" name="max_floor_size">
+        <comment>最大层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="50" parent="4" name="typical_floor_area">
+        <comment>整层面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="51" parent="4" name="lot_size">
+        <comment>总占地面积</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="52" parent="4" name="building_ac_type">
+        <comment>空调类型
+central
+indenpendent
+unknown</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="53" parent="4" name="building_ac_desc">
+        <comment>空调描述</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="54" parent="4" name="freshness_date">
+        <comment>建筑上市时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="55" parent="4" name="signage">
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="56" parent="4" name="tenancy">
+        <comment>单租户或多租户
+single
+multiple</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="57" parent="4" name="elevator_count">
+        <comment>电梯数</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="58" parent="4" name="elevator_desc">
+        <comment>电梯描述</comment>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="59" parent="4" name="major_tenants">
+        <comment>主要租户</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="60" parent="4" name="phone">
+        <comment>楼盘联系电话</comment>
+        <data-type>varchar(2048)|0</data-type>
+      </column>
+      <column id="61" parent="4" name="efficiency_rate">
+        <comment>得房率</comment>
+        <data-type>double|0</data-type>
+      </column>
+      <column id="62" parent="4" name="handover_standard">
+        <comment>交付标准</comment>
+        <data-type>enum(&apos;whitebox&apos;, &apos;pre_built&apos;, &apos;raw/shell&apos;, &apos;as-built&apos;, &apos;2nd-generation&apos;, &apos;under_construction&apos;)|0</data-type>
+      </column>
+      <column id="63" parent="4" name="floor_loading">
+        <comment>楼板承重</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="64" parent="4" name="opex">
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="65" parent="4" name="current_opex_total">
+        <comment>当年管理费</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="66" parent="4" name="opex_type">
+        <comment>物业费类型</comment>
+        <data-type>enum(&apos;gross&apos;, &apos;net&apos;)|0</data-type>
+      </column>
+      <column id="67" parent="4" name="img_name">
+        <comment>用于传送文件名，无实际意义</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="68" parent="4" name="img_type">
+        <comment>用于传送文件名，无实际意义</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="69" parent="4" name="gmt_create">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="70" parent="4" name="gmt_modified">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="71" parent="4" name="parking-number-desc">
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="72" parent="4" name="building_clear_height_desc">
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <index id="73" parent="4" name="fk_building_asset_idx">
+        <columns>asset_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="74" parent="4" name="fk_building_building_grade_idx">
+        <columns>building_grade_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="75" parent="4" name="fk_building_creator_idx">
+        <columns>creator</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="76" parent="4" name="fk_building_key_ver_idx">
+        <columns>ukey
+ver</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="77" parent="4" name="fk_building_market_idx">
+        <columns>market_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="78" parent="4" name="fk_building_owner_idx">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="79" parent="4" name="fk_building_submarket_idx">
+        <columns>submarket_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="80" parent="4" name="fk_building_type_idx">
+        <columns>building_type</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="81" parent="4" name="fk_building_user_idx">
+        <columns>admin</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="82" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="83" parent="4" name="fk_building_asset">
+        <columns>asset_id</columns>
+        <ref-key>spider.asset(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="84" parent="4" name="fk_building_building_grade">
+        <columns>building_grade_id</columns>
+        <ref-key>spider.building_grade(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="85" parent="4" name="fk_building_market">
+        <columns>market_id</columns>
+        <ref-key>spider.market(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="86" parent="4" name="fk_building_submarket">
+        <columns>submarket_id</columns>
+        <ref-key>spider.submarket(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="87" parent="4" name="fk_building_creator">
+        <columns>creator</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="88" parent="4" name="fk_building_owner">
+        <columns>owner</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="89" parent="4" name="fk_building_admin">
+        <columns>admin</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="90" parent="4" name="fk_building_type">
+        <columns>building_type</columns>
+        <ref-key>spider.building_type(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="91" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="92" parent="5" name="building_id">
+        <comment>building_id\n</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="93" parent="5" name="company_id">
+        <comment>company_id\n</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="94" parent="5" name="fk_building_company_building_idx">
+        <columns>building_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="95" parent="5" name="fk_building_company_company_idx">
+        <columns>company_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="96" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="97" parent="5" name="fk_building_company_building">
+        <columns>building_id</columns>
+        <ref-key>~.building.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="98" parent="5" name="fk_building_company_company">
+        <columns>company_id</columns>
+        <ref-key>~.company.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="99" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="100" parent="6" name="building_id">
+        <comment>building_id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="101" parent="6" name="company_id">
+        <comment>company_id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="102" parent="6" name="fk_building_property_building_idx">
+        <columns>building_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="103" parent="6" name="fk_building_property_company_idx">
+        <columns>company_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="104" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="105" parent="6" name="fk_building_property_building">
+        <columns>building_id</columns>
+        <ref-key>~.building.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="106" parent="6" name="fk_building_property_company">
+        <columns>company_id</columns>
+        <ref-key>~.company.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <column id="107" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="108" parent="7" name="name">
+        <comment>公司名</comment>
+        <data-type>varchar(127)|0</data-type>
+      </column>
+      <column id="109" parent="7" name="type">
+        <comment>公司类型\n中介\n开发商\n租户\n业主\n物业公司\n租赁代理</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="110" parent="7" name="logo">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="111" parent="7" name="website">
+        <comment>公司网址</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="112" parent="7" name="telephone">
+        <comment>公司电话</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <key id="113" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="114" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="115" parent="8" name="ukey">
+        <comment>每个space唯一标示，必须与版本配合才能作为主键</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="116" parent="8" name="ver">
+        <comment>版本(0表示最新版，其余顺序递增)</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="117" parent="8" name="asset_id">
+        <comment>资产id，同一space的不同版本共享同一asset</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="118" parent="8" name="space_type_id">
+        <comment>房源类型id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="119" parent="8" name="building_id">
+        <comment>楼盘id，同一space的不同版本共享同一building</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="120" parent="8" name="contiguous_id">
+        <comment>连续空间id</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="121" parent="8" name="creator">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="122" parent="8" name="owner">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="123" parent="8" name="admin">
+        <comment>资产管理员</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="124" parent="8" name="floor">
+        <comment>楼层</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="125" parent="8" name="unit">
+        <comment>单元号</comment>
+        <data-type>varchar(15)|0</data-type>
+      </column>
+      <column id="126" parent="8" name="min_divisible">
+        <comment>最小分隔面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="127" parent="8" name="size">
+        <comment>空间大小</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="128" parent="8" name="available_size">
+        <comment>可用面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="129" parent="8" name="current_size">
+        <comment>预测面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="130" parent="8" name="target_size">
+        <comment>实测面积</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="131" parent="8" name="rate">
+        <comment>每平米租金</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="132" parent="8" name="handover_standard">
+        <comment>交付标准</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="133" parent="8" name="is_occupied">
+        <comment>是否空置</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="134" parent="8" name="budget">
+        <comment>租金预算</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="135" parent="8" name="is_contiguous">
+        <comment>是否连续</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="136" parent="8" name="is_divisible">
+        <comment>是否可分割</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="137" parent="8" name="LCD">
+        <comment>合同起租日期</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="138" parent="8" name="LED">
+        <comment>合同到期时间
+Lease Term:（转租：自动确定＝LED-LCD; 非转租＝最大可租期限）</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="139" parent="8" name="date_vacant">
+        <comment>租户离开日期</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="140" parent="8" name="date_available">
+        <comment>房屋可用时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="141" parent="8" name="lease_type">
+        <comment>是否转租
+lease
+sublease
+unknown</comment>
+        <data-type>enum(&apos;lease&apos;, &apos;sublease&apos;, &apos;unknown&apos;)|0</data-type>
+      </column>
+      <column id="142" parent="8" name="space_clear_height">
+        <comment>净层高</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="143" parent="8" name="name">
+        <comment>房源标题</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="144" parent="8" name="opex">
+        <comment>房源物业费</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="145" parent="8" name="sell_rate">
+        <comment>出售价格</comment>
+        <data-type>decimal(14,4)|0</data-type>
+      </column>
+      <column id="146" parent="8" name="shortest_lease_term">
+        <comment>最短租期，按月</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="147" parent="8" name="longest_lease_term">
+        <comment>最长租期，按月</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="148" parent="8" name="grace_lease_term">
+        <comment>免租期</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="149" parent="8" name="management_status">
+        <comment>状态，运营管理状态</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="150" parent="8" name="system_status">
+        <comment>系统状态，枚举NORMAL, FROZEN, ON_MARKET, OFF_MARKET, ARCHIVED, REMOVED</comment>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="151" parent="8" name="market_status">
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="152" parent="8" name="date_listed">
+        <comment>on_market时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="153" parent="8" name="description">
+        <comment>描述</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="154" parent="8" name="memo">
+        <comment>备忘</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="155" parent="8" name="gmt_create">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="156" parent="8" name="gmt_modified">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="157" parent="8" name="date_archived">
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="158" parent="8" name="fc_building_space_idx">
+        <columns>building_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="159" parent="8" name="fc_space_asset_idx">
+        <columns>asset_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="160" parent="8" name="fk_space_contiguous_idx">
+        <columns>contiguous_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="161" parent="8" name="fk_space_creator_idx">
+        <columns>creator</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="162" parent="8" name="fk_space_gmt_create_idx">
+        <columns>gmt_create</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="163" parent="8" name="fk_space_key_ver_idx">
+        <columns>ukey
+ver</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="164" parent="8" name="fk_space_owner_idx">
+        <columns>owner</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="165" parent="8" name="fk_space_space_type_idx">
+        <columns>space_type_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="166" parent="8" name="fk_space_user_idx">
+        <columns>admin</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="167" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="168" parent="8" name="fk_space_asset">
+        <columns>asset_id</columns>
+        <ref-key>spider.asset(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="169" parent="8" name="fk_space_space_type">
+        <columns>space_type_id</columns>
+        <ref-key>spider.space_type(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="170" parent="8" name="fk_space_building">
+        <columns>building_id</columns>
+        <ref-key>~.building.PRIMARY</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="171" parent="8" name="fk_space_contiguous">
+        <columns>contiguous_id</columns>
+        <ref-key>spider.contiguous(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="172" parent="8" name="fk_space_creator">
+        <columns>creator</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="173" parent="8" name="fk_space_owner">
+        <columns>owner</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="174" parent="8" name="fk_space_user">
+        <columns>admin</columns>
+        <ref-key>spider.user(id)</ref-key>
+        <cascade-update-rule>no_action</cascade-update-rule>
+        <cascade-delete-rule>no_action</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - haozu_raw_text@localhost" uuid="943cc72e-01b7-49df-8456-f1d3588d6942">
+    <database-info product="MySQL" version="5.5.5-10.0.20-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="haozu_raw_text">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="spider"/>
+      <schema id="6" name="vc"/>
+      <schema id="7" name="visualcommunity"/>
+      <table id="8" parent="1" name="building"/>
+      <table id="9" parent="1" name="building_developer"/>
+      <table id="10" parent="1" name="building_operator"/>
+      <table id="11" parent="1" name="company"/>
+      <table id="12" parent="1" name="space"/>
+      <column id="13" parent="8" name="id">
+        <comment>consider uuid</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="8" name="code">
+        <comment>妤肩洏浠ｇ爜</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="15" parent="8" name="ukey">
+        <comment>姣忎釜building鍞?竴鏍囩ず锛屽繀椤讳笌鐗堟湰閰嶅悎鎵嶈兘浣滀负涓婚敭</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="16" parent="8" name="ver">
+        <comment>鐗堟湰</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="17" parent="8" name="keyword_tag">
+        <comment>妤肩洏鍏抽敭瀛?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="18" parent="8" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="19" parent="8" name="asset_id">
+        <comment>璧勪骇id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="20" parent="8" name="building_grade_id">
+        <comment>妤肩洏绛夌骇id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="21" parent="8" name="market_id">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="22" parent="8" name="submarket_id">
+        <comment>鍟嗗湀id
+</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="23" parent="8" name="creator">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="24" parent="8" name="owner">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="25" parent="8" name="admin">
+        <comment>璧勪骇绠＄悊鍛?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="26" parent="8" name="building_type">
+        <comment>寤虹瓚绫诲瀷</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="27" parent="8" name="building_name_cn">
+        <comment>寤虹瓚涓?枃鍚?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="28" parent="8" name="building_name_en">
+        <comment>寤虹瓚鑻辨枃鍚?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="29" parent="8" name="building_name_other">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="30" parent="8" name="latitude">
+        <comment>绾?害</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="31" parent="8" name="longitude">
+        <comment>缁忓害</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="32" parent="8" name="address_cn">
+        <comment>鍦板潃涓?枃鍚?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="33" parent="8" name="vacancy_rate">
+        <comment>浣忔埧鐜?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="34" parent="8" name="building_area">
+        <comment>寤虹瓚闈㈢Н锛宼otal GFA</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="35" parent="8" name="rentable_area">
+        <comment>鍙??鐢ㄩ潰绉?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="36" parent="8" name="available_area">
+        <comment>鍙?敤闈㈢Н</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="37" parent="8" name="parking_ratio">
+        <comment>杞︿綅瀵嗗害
+4:1000</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="38" parent="8" name="parking_type">
+        <comment>杞︿綅绫诲瀷
+</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="39" parent="8" name="parking_rate">
+        <comment>鍋滆溅璐?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="40" parent="8" name="parking_number">
+        <comment>鍋滆溅鏁?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="41" parent="8" name="parking_reserved_number">
+        <comment>宸查?璁㈠仠杞︿綅</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="42" parent="8" name="parking_area">
+        <comment>鍋滆溅闈㈢Н</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="43" parent="8" name="building_clear_height">
+        <comment>灞傞珮</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="44" parent="8" name="building_clear_height_net">
+        <comment>鍑?眰楂?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="45" parent="8" name="building_year">
+        <comment>寤虹瓚骞翠唤</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="46" parent="8" name="building_completion_date">
+        <comment>绔ｅ伐鏃堕棿</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="47" parent="8" name="building_sprinkler">
+        <comment>鐏?伀璁炬柦</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="48" parent="8" name="building_green_ratio">
+        <comment>妤肩洏缁垮寲鐜嘰n</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="49" parent="8" name="floor_count">
+        <comment>鎬诲眰鏁?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="50" parent="8" name="estimated_area">
+        <comment>浼拌?闈㈢Н</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="51" parent="8" name="actual_area">
+        <comment>瀹為檯闈㈢Н</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="52" parent="8" name="min_floor_size">
+        <comment>鏈?皬灞傞潰绉?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="53" parent="8" name="max_floor_size">
+        <comment>鏈?ぇ灞傞潰绉?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="54" parent="8" name="typical_floor_area">
+        <comment>鏁村眰闈㈢Н</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="55" parent="8" name="lot_size">
+        <comment>鎬诲崰鍦伴潰绉?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="56" parent="8" name="building_ac_type">
+        <comment>绌鸿皟绫诲瀷
+central
+indenpendent
+unknown</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="57" parent="8" name="building_ac_desc">
+        <comment>绌鸿皟鎻忚堪</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="58" parent="8" name="freshness_date">
+        <comment>寤虹瓚涓婂競鏃堕棿</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="59" parent="8" name="signage">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="60" parent="8" name="tenancy">
+        <comment>鍗曠?鎴锋垨澶氱?鎴穃nsingle
+multiple</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="61" parent="8" name="elevator_count">
+        <comment>鐢垫?鏁?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="62" parent="8" name="elevator_desc">
+        <comment>鐢垫?鎻忚堪</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="63" parent="8" name="major_tenants">
+        <comment>涓昏?绉熸埛</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="64" parent="8" name="phone">
+        <comment>妤肩洏鑱旂郴鐢佃瘽</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="65" parent="8" name="efficiency_rate">
+        <comment>寰楁埧鐜?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="66" parent="8" name="handover_standard">
+        <comment>浜や粯鏍囧噯</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="67" parent="8" name="floor_loading">
+        <comment>妤兼澘鎵块噸</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="68" parent="8" name="opex">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="69" parent="8" name="current_opex_total">
+        <comment>褰撳勾绠＄悊璐?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="70" parent="8" name="opex_type">
+        <comment>鐗╀笟璐圭被鍨?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="71" parent="8" name="img_name">
+        <comment>鐢ㄤ簬浼犻?鏂囦欢鍚嶏紝鏃犲疄闄呮剰涔?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="72" parent="8" name="img_type">
+        <comment>鐢ㄤ簬浼犻?鏂囦欢鍚嶏紝鏃犲疄闄呮剰涔?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="73" parent="8" name="gmt_create">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="74" parent="8" name="gmt_modified">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="75" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="76" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="77" parent="9" name="building_id">
+        <comment>building_id\n</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="78" parent="9" name="company_id">
+        <comment>company_id\n</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <key id="79" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="80" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="81" parent="10" name="building_id">
+        <comment>building_id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="82" parent="10" name="company_id">
+        <comment>company_id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <key id="83" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="84" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="85" parent="11" name="name">
+        <comment>鍏?徃鍚?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="86" parent="11" name="type">
+        <comment>鍏?徃绫诲瀷\n涓?粙\n寮?彂鍟哱n绉熸埛\n涓氫富\n鐗╀笟鍏?徃\n绉熻祦浠ｇ悊</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="87" parent="11" name="logo">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="88" parent="11" name="website">
+        <comment>鍏?徃缃戝潃</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="89" parent="11" name="telephone">
+        <comment>鍏?徃鐢佃瘽</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <key id="90" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="91" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="92" parent="12" name="ukey">
+        <comment>姣忎釜space鍞?竴鏍囩ず锛屽繀椤讳笌鐗堟湰閰嶅悎鎵嶈兘浣滀负涓婚敭</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="93" parent="12" name="ver">
+        <comment>鐗堟湰(0琛ㄧず鏈?柊鐗堬紝鍏朵綑椤哄簭閫掑?)</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="94" parent="12" name="asset_id">
+        <comment>璧勪骇id锛屽悓涓?pace鐨勪笉鍚岀増鏈?叡浜?悓涓?sset</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="95" parent="12" name="space_type_id">
+        <comment>鎴挎簮绫诲瀷id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="96" parent="12" name="building_id">
+        <comment>妤肩洏id锛屽悓涓?pace鐨勪笉鍚岀増鏈?叡浜?悓涓?uilding</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="97" parent="12" name="contiguous_id">
+        <comment>杩炵画绌洪棿id</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="98" parent="12" name="creator">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="99" parent="12" name="owner">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="100" parent="12" name="admin">
+        <comment>璧勪骇绠＄悊鍛?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="101" parent="12" name="floor">
+        <comment>妤煎眰</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="102" parent="12" name="unit">
+        <comment>鍗曞厓鍙?</comment>
+        <data-type>varchar(15)|0</data-type>
+      </column>
+      <column id="103" parent="12" name="min_divisible">
+        <comment>鏈?皬鍒嗛殧闈㈢Н</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="104" parent="12" name="size">
+        <comment>绌洪棿澶у皬</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="105" parent="12" name="available_size">
+        <comment>鍙?敤闈㈢Н</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="106" parent="12" name="current_size">
+        <comment>棰勬祴闈㈢Н</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="107" parent="12" name="target_size">
+        <comment>瀹炴祴闈㈢Н</comment>
+        <data-type>decimal(10,4)|0</data-type>
+      </column>
+      <column id="108" parent="12" name="rate">
+        <comment>姣忓钩绫崇?閲?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="109" parent="12" name="handover_standard">
+        <comment>浜や粯鏍囧噯</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="110" parent="12" name="is_occupied">
+        <comment>鏄?惁绌虹疆</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="111" parent="12" name="budget">
+        <comment>绉熼噾棰勭畻</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="112" parent="12" name="is_contiguous">
+        <comment>鏄?惁杩炵画</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="113" parent="12" name="is_divisible">
+        <comment>鏄?惁鍙?垎鍓?</comment>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="114" parent="12" name="LCD">
+        <comment>鍚堝悓璧风?鏃ユ湡</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="115" parent="12" name="LED">
+        <comment>鍚堝悓鍒版湡鏃堕棿
+Lease Term:锛堣浆绉燂細鑷?姩纭?畾锛滾ED-LCD; 闈炶浆绉燂紳鏈?ぇ鍙??鏈熼檺锛?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="116" parent="12" name="date_vacant">
+        <comment>绉熸埛绂诲紑鏃ユ湡</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="117" parent="12" name="date_available">
+        <comment>鎴垮眿鍙?敤鏃堕棿</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="118" parent="12" name="lease_type">
+        <comment>鏄?惁杞??
+lease
+sublease
+unknown</comment>
+        <data-type>enum(&apos;lease&apos;, &apos;sublease&apos;, &apos;unknown&apos;)|0</data-type>
+      </column>
+      <column id="119" parent="12" name="space_clear_height">
+        <comment>鍑?眰楂?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="120" parent="12" name="name">
+        <comment>鎴挎簮鏍囬?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="121" parent="12" name="opex">
+        <comment>鎴挎簮鐗╀笟璐?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="122" parent="12" name="sell_rate">
+        <comment>鍑哄敭浠锋牸</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="123" parent="12" name="shortest_lease_term">
+        <comment>鏈?煭绉熸湡锛屾寜鏈?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="124" parent="12" name="longest_lease_term">
+        <comment>鏈?暱绉熸湡锛屾寜鏈?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="125" parent="12" name="grace_lease_term">
+        <comment>鍏嶇?鏈?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="126" parent="12" name="management_status">
+        <comment>鐘舵?锛岃繍钀ョ?鐞嗙姸鎬?</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="127" parent="12" name="system_status">
+        <comment>绯荤粺鐘舵?锛屾灇涓綨ORMAL, FROZEN, ON_MARKET, OFF_MARKET, ARCHIVED, REMOVED</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="128" parent="12" name="market_status">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="129" parent="12" name="date_listed">
+        <comment>on_market鏃堕棿</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="130" parent="12" name="description">
+        <comment>鎻忚堪</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="131" parent="12" name="memo">
+        <comment>澶囧繕</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="132" parent="12" name="gmt_create">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="133" parent="12" name="gmt_modified">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="134" parent="12" name="date_archived">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="135" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
