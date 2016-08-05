@@ -113,6 +113,12 @@
 								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
 								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>思源学堂即学生活动中心，建筑面积7432平方米，主体4层（最高部分）框架结构，工程于2009年12月开工建设，2011年9月落成典礼。该楼功能主要包括报告厅、展厅、舞厅以及社团活动室、办公室等，其中报告厅可同时容纳1028人就席思源学堂报告厅用于举行学校及海南省重大活动。2015年3月，彭丽媛女士来到海南大学思源学堂，出席“艾滋病／结核病防治宣传校园行——走进海南大学”活动。来华出席博鳌亚洲论坛2015年年会的赞比亚总统夫人埃斯特、盖茨基金会主席比尔•盖茨和部分驻华使节、国际组织驻华代表也出席活动。</p>" +
 		"</div>";
+		var content_baisha =
+		"<div>" +
+								"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>白沙黎族自治县</h4>" +
+								"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+								"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>白沙黎族自治县位于海南岛中西部，北纬18°56'-19°29'，东经109°02'-109°42'，是中国海南省的一个自治县。东与琼中县为依，东南与五指山市交界，南与乐东县相连，西与昌江县接壤，北与儋州市毗邻。全境南北长63千米，东西宽68千米，面积2117平方千米，截至2012年末，人口19.85万。自治县人民政府驻牙叉镇。</p>" +
+		"</div>";
 		sContent.push(content_sanjiao);
 		sContent.push(content_shijiao);
 		sContent.push(content_lianyiguan);
@@ -128,6 +134,7 @@
 		sContent.push(content_wushitangzhengmeng);
 		sContent.push(content_xinshangyejie);
 		sContent.push(content_siyuanxuetang);
+		sContent.push(content_baisha);
 		var index = -1;
 		var points = [];
 		var pts = [];
@@ -147,6 +154,7 @@
 		var wushitangzhengmeng = new BMap.Point(110.3357403988, 20.0616534282);
 		var xinshangyejie = new BMap.Point(110.3374908770, 20.0603232166);
 		var siyuanxuetang = new BMap.Point(110.3337075358, 20.0628101865);
+		var baisha = new BMap.Point(109.458555, 19.229244);
 		points.push(sanjiao);
 		points.push(shijiao);
 		points.push(lianyiguan);
@@ -162,6 +170,7 @@
 		points.push(wushitangzhengmeng);
 		points.push(xinshangyejie);
 		points.push(siyuanxuetang);
+		points.push(baisha);
 		var driving = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});    //驾车实例
 		// driving.search(beimen, siyuanxuetang);
 		// driving.setSearchCompleteCallback(function(){
@@ -185,7 +194,7 @@
 					targetPoints.push(points[i]);
 				}
 			}
-			var min = 1000;
+			var min = 5000;
 			var oldTarget = target;
 			for (var j = targetPoints.length - 1; j >= 0; j--) {
 				var distance = map.getDistance(atPoint, targetPoints[j]).toFixed(2);
