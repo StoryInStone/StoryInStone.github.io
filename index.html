@@ -22,9 +22,9 @@
 		map.addOverlay(targetMk);
 		var sContent =
 		"<div>" +
-			"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
-			"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
-			"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+				"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>海南大学信息科学与技术学院</h4>" +
+				"<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" +
+				"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
 		"</div>";
 		var infoWindow = new BMap.InfoWindow(sContent);
 		var index = -1;
@@ -50,18 +50,19 @@
 		points.push(xueshengfuwu);
 		points.push(liushitang);
 		var geo_options = {
-		enableHighAccuracy: true,
-		maximumAge        : 30000,
-		timeout           : 27000
+		enableHighAccuracy: true
 		};
-		setTimeout(function() {
-		if (navigator.geolocation) {
-		navigator.geolocation.watchPosition(showPosition, geo_error, geo_options);
+		function geo() {
+		geolocation.getCurrentPosition(function(r){
+		if(this.getStatus() == BMAP_STATUS_SUCCESS){
+			carMk.setPosition(r.point);
+			map.panTo(r.point);
 		}
-		}, 1500);
-		function geo_error() {
-			return;
+		},{enableHighAccuracy: true})
+		setTimeout("geo()", 3000);
 		}
+		setTimeout("geo()", 1000);
+		
 		function showPosition(position) {
 		var x = position.coords.longitude;
 		var y = position.coords.latitude;
