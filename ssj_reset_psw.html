@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>随机抽查与综合执法系统</title>
+		<link href="../assets/css/mui.min.css" rel="stylesheet" />
+		<link href="../assets/css/main.css" rel="stylesheet" />
+		<link href="../assets/css/company.css" rel="stylesheet" />
+		<style>
+			.aputz::-webkit-input-placeholder { color:#666; }
+		</style>
+	</head>
+	<body >
+		<header class="mui-bar mui-bar-nav ">
+		  	<a href="javascript:history.go(-1)" class="return"><i class="icons-return"></i>返回</a>
+		    <h1 class="mui-title">修改密码</h1>
+		</header>
+		<div class="mui-content"  >
+			<!--register--> 
+			<div class="register">
+				<form>
+					<ul>
+						<li>
+							<label ><i class="mui-icon mui-icon-iphone"></i></label>
+							<input class="aput" type="text"  placeholder="请输入登录手机号码" id="mobile" />
+						</li>
+						<li>
+							<label ><i class="mui-icon mui-icon-secru"></i></label>
+							<input class="aputw" type="text"  placeholder="请输入验证码" id="code" />
+							<div class="post mui-left">
+								<i>|</i>
+								<span class="aputz" >获取验证码</span>
+							</div>
+						</li>
+						<li>
+							<label ><i class="mui-icon mui-icon-lock-filled"></i></label>
+							<input class="aput" type="password" name="password"  placeholder="请输入原密码" id="password" />
+						</li>
+						<li>
+							<label ><i class="mui-icon mui-icon-lock-filled"></i></label>
+							<input class="aput" type="password" name="password" required="" placeholder="请输入新密码" id="repassword" />
+						</li>
+						<li>
+							<label ><i class="mui-icon mui-icon-lock-filled"></i></label>
+							<input class="aput" type="password" name="password" required="" placeholder="确认密码" id="sureword" />
+						</li>
+					</ul>
+					<div class="binq">
+        		    	<input class="okbtn"   type="submit" value="确 认   "/>
+        		    </div>
+        		   
+				</form>
+			</div>
+			<!--// register-->
+		</div>
+	
+		<script type="text/javascript" src="../assets/js/jquery-min.js"></script>
+		<script src="../assets/js/layer/layer.js"></script>
+		<script>
+		$('.aputz').click(function(){
+			var tip = layer.msg(
+				'加载中', //显示文字
+				{
+					icon: 16,//显示图标
+					shade: [0.6, '#000'],//遮罩层背景色
+					//shadeClose : true,//点击点击弹层外区域关闭遮罩
+					//closeBtn :true //点击关闭按钮，关闭遮罩
+				}
+			);
+			
+			var submitData = {};
+			submitData['code'] = $('#code').val();
+			
+			$.ajax({
+		            url: "提交到服务器的路径",
+		            type: 'POST',
+		            dataType: 'json',
+		            data: submitData,
+		            success: function(json){
+					    if(json.status){
+						    //操作成功，跳转到用户中心
+						    layer.close(tip);//关闭弹窗
+						}else{
+							layer.close(tip);//关闭弹窗
+							//操作失败，提示操作失败信息
+							//layer.msg(json.msg, {icon: 2});
+						}
+					},
+		             error: function(){
+		            //     layer.close(tip);//关闭弹窗
+		            //     layer.msg('交互错误', {icon: 2});
+		             }
+		        });
+		});
+		(function() {
+				var b = document.documentElement,
+					a = function() {
+						var a = b.getBoundingClientRect().width;
+						b.style.fontSize = 0.0625 * (640 <= a ? 640 : a) + "px"
+					},
+					c = null;
+				window.addEventListener("resize",
+					function() {
+						clearTimeout(c);
+						c = setTimeout(a, 300)
+					});
+				a()
+			})();
+	        
+			
+		</script>
+		
+		
+		
+		
+        <script>
+			$('.okbtn').click(function(){
+				var mobile = $('#mobile').val();
+				var code = $('#code').val();
+				var password = $('#password').val();
+				var repassword = $('#repassword').val();
+				var sureword = $('#sureword').val();
+				
+				if(mobile == ''){
+					layer.msg('手机号码不能为空', {icon: 2, offset: '100px'});return false;
+				}
+				if(!validatemobile(mobile)){
+					layer.msg('请填写正确手机号', {icon: 2,offset: '100px'});return false;
+				}
+				
+				if(code == ''){
+					layer.msg('验证码不能为空', {icon: 2,offset: '100px'});return false;
+				}
+				if(password == ''){
+					layer.msg('原密码不能为空', {icon: 2,offset: '100px'});return false;
+				}
+				if(repassword== ''){
+					layer.msg('新密码不能为空', {icon: 2,offset: '100px'});return false;
+				}
+				if(sureword == ''){
+					layer.msg('确认密码不能为空', {icon: 2,offset: '100px'});return false;
+				}
+				if(sureword != repassword){
+					layer.msg('两次密码不一致',{icon:2,offset: '100px'});return false;
+				}
+				
+				
+				var url = "提交到服务器的路径";
+				submitData['mobile'] = mobile;
+				submitData['code'] = code;
+				submitData['password'] = password;
+				submitData['repassword'] = repassword;
+				
+				$.ajax({
+		            url: url,
+		            type: 'POST',
+		            dataType: 'json',
+		            data: submitData,
+		            success: function(json){
+					    if(json.status){
+						    //操作成功，跳转到用户中心
+						}else{
+							//操作失败，提示操作失败信息
+							layer.msg(json.msg, {icon: 2,offset: '100px'});
+						}
+					},
+		            error: function(){
+		                alert('交互错误');
+		            }
+		        });
+			});
+			
+			//判断手机号码
+			function validatemobile(mobile)
+			{
+			    if(mobile.length==0)
+			    {
+			       return false;
+			    }    
+			    if(mobile.length!=11)
+			    {
+			        return false;
+			    }
+			    
+			    var myreg = /^(((1[34578][0-9]{1})|159|153)+\d{8})$/;
+			    if(!myreg.test(mobile))
+			    {
+			        return false;
+			    }
+			    return true;
+			}
+		</script>
+	</body>
+</html>

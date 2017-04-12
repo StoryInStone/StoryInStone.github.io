@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>随机抽查与综合执法系统</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/swiper.css" />
+	
+	</head>
+
+	<body>
+		<div class="min_box">
+			<!--header-->
+			<header class="mui-bar mui-bar-nav">
+				<a href="javascript:history.go(-1)" class="return"><i class="icons-return"></i>返回</a>
+				<h1 class="mui-title">统计报表</h1>
+			</header>
+			<!--header-->
+			<!--搜索-->
+
+			<!--搜索-->
+			<div class="mui-content">
+				<div class="min_box mui-scroll-wrapper mui-wrapper-height min_box1">
+					<div class="mui-scroll">
+						<div class="mui-segmented-control sta_tit">
+							<a class="mui-control-item mui-active" href="#item1">
+								<span>投诉</span>
+							</a>
+							<a class="mui-control-item" href="#item2">
+								<span>执法</span>
+							</a>
+							<a class="mui-control-item" href="#item3">
+								<span>结案</span>
+							</a>
+							<a class="mui-control-item" href="#item4">
+								<span>正常</span>
+							</a>
+
+						</div>
+
+						<div id="item1" class="mui-control-content mui-active">
+
+							<div class="tj_picture top">
+								<div class="white">
+									<div class=" mui-segmented-control picture1">
+										<a class="mui-control-item mui-active" href="#item5">
+											<span>7天</span>
+										</a>
+										<a class="mui-control-item" href="">
+											<span>30天</span>
+										</a>
+										<a class="mui-control-item" href="">
+											<span>90天</span>
+										</a>
+									</div>
+								</div>
+								<div id="item5" class="mui-control-content mui-active ">
+									<div class=" no_line">
+
+										<div class="chart" id="lineChart"></div>
+										<div class="tongji">
+											7天投诉统计：<span>16</span>
+										</div>
+									</div>
+
+									<ul class="tongji_ul top">
+										<li><span class="pay_icon"></span>
+											<span class="pay_1">7天投诉量排行榜</span></li>
+										<li><span class="ts_date"><span>1.</span>2016-06-10</span>
+											<span class="ts_num">10</span></li>
+										<li><span class="ts_date"><span>2.</span>2016-06-09</span>
+											<span class="ts_num">2</span></li>
+										<li><span class="ts_date"><span>3.</span>2016-06-08</span>
+											<span class="ts_num">3</span></li>
+										<li><span class="ts_date"><span>4.</span>2016-06-07</span>
+											<span class="ts_num">4</span></li>
+										<li><span class="ts_date"><span>5.</span>2016-06-11</span>
+											<span class="ts_num">3</span></li>
+										<li><span class="ts_date"><span>6.</span>2016-06-12</span>
+											<span class="ts_num">0</span></li>
+										<li><span class="ts_date"><span>7.</span>2016-06-13</span>
+											<span class="ts_num">0</span></li>
+
+									</ul>
+
+								</div>
+
+								<div id="item6" class="mui-control-content"></div>
+								<div id="item7" class="mui-control-content"></div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<div id="item2" class="mui-control-content">
+						sdsad
+					</div>
+					<div id="item3" class="mui-control-content"></div>
+					<div id="item4" class="mui-control-content"></div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+
+		<script src="../assets/js/mui.min.js"></script>
+		<script src="../assets/js/swiper.min.js"></script>
+		<script src="../assets/js/jquery-min.js"></script>
+		<script src="../assets/js/echarts-all.js"></script>
+		<script src="../assets/js/wap.js"></script>
+
+		<script>
+			mui.init();
+			var getOption = function(chartType) {
+				var chartOption = chartType == 'pie' ? {
+					calculable: false,
+
+				} : {
+
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 30,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['06-07', ' ', ' ', ' ', ' ', ' ', ' 06-13']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					series: [{
+						name: '',
+						type: chartType,
+						data: [0, 5.9, 0, 30, 3, 2, 0]
+					}]
+				};
+				return chartOption;
+			};
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+
+			var lineChart = echarts.init(byId('lineChart'));
+			lineChart.setOption(getOption('line'));
+		</script>
+
+	</body>
+	</body>
+
+</html>
