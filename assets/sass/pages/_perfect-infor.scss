@@ -1,0 +1,74 @@
+//perfect-infor
+.perfect-infor{
+    .title{
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        color: #999;
+        font-size: 15px;
+    }
+    ol{
+        li{
+            background-color: #fff;
+            padding: 0 .75rem;
+            border-bottom: 1px solid #ebebeb;
+            font-size: 16px;
+            color: #666;
+            display: bblock;
+            a{
+                color: #666;
+            }
+            
+            &:hover{
+                background-color: #fafafa;
+            }
+            .imgpos{
+                height: 3.25rem;
+                line-height: 3.25rem;
+                .trl{
+                    float: left;
+                 }
+                .posCs{
+                   float: right; 
+                   width: 3.35rem;
+                   height: 3.25rem;
+                   border-radius: 50%;
+                   i{
+                      float: right;
+                      margin-top: 1.3rem;
+                      color: #999;
+                      font-size: 20px;
+                     
+                   }
+                   img{
+                       border-radius: 50%;
+                       width: 2.25rem;
+                       height: 2.25rem;
+                       margin-top: .5rem;
+                       overflow: hidden;
+                   }
+                }
+            }
+        }
+    }
+}
+
+.addCm{
+   height: 44px;
+   line-height: 44px;
+   .mhright{
+       float: right;
+       display: block;
+       
+       input{
+           width: 67%;
+           float: right;
+           margin-top: 10px;
+           height: 23px;
+           line-height: 23px;
+           border: none;
+           background: none;
+           text-indent: 5px;
+       }
+   }
+}

@@ -1,0 +1,80 @@
+/*报修申请*/
+.menu ul{background: #fff;border-bottom: 1px solid #ebebeb;}
+.menu ul.mui-bar-tab li.mui-tab-item{color: #666;}
+.menu ul.mui-bar-tab li.mui-tab-item.mui-active{color: #3baefc;}
+.menu ul.mui-bar-tab li.mui-tab-item.mui-active span{border-bottom: 3px solid #3baefc;padding-bottom: 12px;}
+.repair-content{background: #fff;border-top: 1px solid #ebebeb;}
+.repair-content ul li{overflow: hidden;padding: 0 10px;border-bottom: 1px solid #ebebeb;}
+.repair-content ul li span{line-height: 44px;}
+.repair-content ul li span.situation{color: #3baefc;float: left;}
+.repair-content ul li span.complete{color: #999;float: left;}
+.repair-content ul li span{color: #666;float: left;margin-right: 5px;}
+.repair-content ul li span:last-of-type{color: #999;float: right;margin-right: 0;}
+.repair-content ul li h3{color: #333;line-height: 32px;margin-top: 5px;margin-bottom: 0;}
+.repair-content ul li p{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #999;line-height: 24px;margin-bottom: 8px;}
+.repair-content ul li button{border-radius: 0;width: 25%;margin: 5px 0;float: right;margin-left: 10px;}
+.repair-content ul li span.name{float: left;color: #666;}
+/*报修详情、装修申请、托管申请、投诉管理*/
+.pending{background: #fff;border-bottom: 1px solid #ebebeb;height: 44px;line-height: 44px;padding: 0 0.64rem;}
+.pending ul li button{border-radius: 0;width: 25%;margin: 5px 0;float: right;margin-left: 10px;}
+.pending ul li span{color: #3baefc;}
+.repair-detail{background: #fff;border-top: 1px solid #ebebeb;border-bottom: 1px solid #ebebeb;}
+.owner{border-bottom: 1px solid #ebebeb;padding: 10px 0.64rem;}
+.owner ul{overflow: hidden;}
+.owner li{float: left;}
+.owner li:first-of-type{width: 17%;}
+.owner li img{width: 100%;}
+.owner li:nth-of-type(2){position: relative;width: 52%;margin-left: 10px;}
+.owner li p{position: absolute;bottom: 1px;margin-bottom: 0;}
+.owner li:last-of-type{width: 80px;float: right;position: relative;}
+.owner li:last-of-type span{position: absolute;top: 50%;margin-top: -15px;color:#999;width: 80px;height: 30px;border: 1px solid #ebebeb;display: block;text-align: center;line-height: 30px;}
+.owner li:last-of-type span:active{background: #fafafa;}
+.repair-detail ul.repair-item{padding: 0 0.64rem;}
+.repair-detail ul.repair-item h3{margin: 0;line-height: 44px;}
+.repair-detail ul.repair-item li{border-bottom: 1px dashed #ebebeb;}
+.repair-detail ul.repair-item p{margin-top: 10px;}
+.repair-detail ul.decoration-item p{color: #666;line-height: 20px;}
+.repair-detail ul.repair-item div{overflow: hidden;}
+.repair-detail ul.repair-item img{width: 19%;float: left;border-radius: 8px;margin-right: 1.25%;margin-bottom: 12px;}
+.repair-detail ul.repair-item img.lastimg{margin-right: 0;}
+.repair-detail ul.repair-item span{line-height: 44px;}
+.repair-detail ul.repair-item span:first-of-type{color: #999;}
+.repair-detail ul.repair-item li:last-of-type{text-align: right;border: none;}
+ul.contact-p{background: #fff;}
+.contact-p a{padding: 0 0.64rem;margin-bottom: 10px;height: 44px;line-height: 44px;width: 100%;display: block;border-bottom: 1px solid #ebebeb;border-top: 1px solid #ebebeb;}
+.contact-p a:active{background: #fafafa;color: inherit;}
+.contact-p a span{color: #333;}
+.contact-p a span:first-of-type{color: #999;}
+.contact-p a span:last-of-type{float: right;color: #999;}
+.contact-p a i{float: right;line-height: 44px;color: #999;margin-right: -0.4rem;}
+.pending ul li span.repair-time{color: #999;float: right;}
+.pending ul li span.name{color: #333;margin-right: 5px;}
+.pending ul li span.ready-plan{color: #999;}
+/*投诉管理*/
+.search{background: #fff;border-bottom: 1px solid #ebebeb;margin-bottom: 10px;position: relative;padding: 0 15px;}
+.search input{color:#999;height: 35px;border: none;outline: none;font-size: 14px;text-align: center;background: #f5f5f5;border-radius: 20px;margin: 5px 0;}
+.search i{position: absolute;top: 7px;right: 25px;color: #999;}
+.search i.mui-icon-search{font-size: 26px;}
+.search i.mui-icon-close{top: 10px;visibility: hidden;}
+.highlight {color:#3baefc;}
+.mui-table-view li i.mui-icon-person{margin-right: 5px;color: #fff;border-radius: 50%;height: 30px;width: 30px;text-align: center;line-height: 30px;}
+.mui-table-view li i.managers{background: url(../img/manegents.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.office{background: url(../img/office.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.finance{background: url(../img/finance.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.gl{background: url(../img/gl.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.service{background: url(../img/service.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.gc{background: url(../img/gc.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.jc{background: url(../img/jc.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.cy{background: url(../img/cy.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li i.zl{background: url(../img/zl.png) no-repeat;background-size: 30px 30px;}
+.mui-table-view li a{overflow: hidden;}
+.mui-table-view li a *{float: left;}
+.mui-table-view li a span span{float: none;}
+.mui-table-view li img{width: 15%;margin-right: 10px;}
+.mui-table-view li a div{position: relative;width: 60%;}
+.mui-table-view li a div p{position: absolute;bottom: 0;}
+.all-person{text-align: center;margin-top: 10px;}
+.search-result{display: none;position: relative;width: 100%;}
+/*底部*/
+footer.mui-bar{background: #fff;padding: 0;text-align: right;height: 50px;}
+.mui-bar button.mui-btn{border-radius: 0;height: 50px;top: 0;width: 120px;}

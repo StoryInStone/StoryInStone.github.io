@@ -1,0 +1,91 @@
+[class*="icons-"] {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    background: url("../img/sprite.png") no-repeat;
+    background-size: 96px auto;
+    overflow: hidden;
+}
+.icons-index {
+    background-position: 3px 0;
+}
+.icons-shop {
+    background-position: -24px 0;
+}
+.icons-cart {
+    background-position: -49px 0;
+}
+.icons-one {
+    background-position: -72px 0;
+
+}
+
+
+.on .icons-index  {
+    background-position: 3px -23px;
+}
+.on .icons-shop {
+    background-position: -24px -23px;
+}
+.on .icons-cart {
+    background-position: -49px -23px;
+}
+.on .icons-one {
+    background-position: -72px -23px;
+}
+.on span {
+    color: #3baefc;
+}
+.icons-return {
+      background-position: 0 -49px;
+}
+.icons-jiaotou{  background-position: -20px -49px;}
+
+
+[class*="iconsp-"] {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 1;
+    background: url("../img/sp.png") no-repeat;
+    background-size: 144px auto;
+    overflow: hidden;
+}
+.icons-gd{
+       background-position: -20px -52px;
+}
+
+.iconsp-n{
+    @include appicon(0,-48px);
+}
+.iconsp-tp{
+    @include appicon(0,-100px);
+}
+.iconsp-rz{
+    @include appicon(0,-130px);
+}
+.iconsp-pos{
+    @include appicon(0,-160px);
+}
+.iconsp-lg{
+    @include appicon(0,-188px);
+}
+.iconsp-tiy{
+    @include appicon(0,-215px);
+}
+.icons-qiehuans{
+    background-position: 0px -125px;
+    height: 18px;
+    float: right;
+}
+ .icons-qiehuan {
+            background-position: -20px -52px;
+        }
+.icons-repair{
+      background-position: 0px -144px;
+      margin:.65rem .5rem 0 .875rem;
+  
+ 
+    
+}

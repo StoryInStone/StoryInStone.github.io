@@ -1,0 +1,54 @@
+/*物业公司首页*/
+.wy_notice div{padding: 0;}
+.wy_notice div a{display: block;width: 100%;padding: 0 0.64rem;}
+.wy_notice div a:active{background: #fafafa;}
+.wait_work1 *{float: left;}
+.wait_work .wait_work1 a{display: block;width: 100%;}
+.wait_work .wait_work1 .mui-icon{line-height: 2.25rem;margin-right: 20px;font-size: 22px;position: relative;top: 2px;}
+.wait_work .wait_work1 .mui-icon-arrowright{float: right;margin-right: -0.4rem;}
+.memu_in{padding: 0;}
+.memu a{overflow: hidden;padding: 1rem;}
+.memu a:active{background: #fafafa;}
+.memu a .img{float: left;margin-bottom: 0;}
+.memu a span{width: auto;float: left;clear: none;line-height: 1.825rem;margin-left: .85rem;}
+.memu a:after{position: absolute;right: 0;height: 3.825rem;top: 0;content: '';background: #ebebeb;width: 1px;}
+.memu a:last-of-type:after{width: 0;}
+.memu a:before{position: absolute;bottom: 0;height: 1px;left: 0;content: '';background: #ebebeb;width: 100%;}
+
+/*待处理工作*/
+.dcl .dcl_2 p{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.pending ul li span.ready-complete{color: #999;}
+/*我的消息*/
+.mui-table-view.msg .mui-media-object{width: 15%;}
+.msg .mui-media-body{width: 81%;position: relative;}
+.mui-table-view.msg span:first-of-type{font-size: 15px;}
+.mui-table-view.msg span:last-of-type{float: right;font-size: 14px;color: #999;}
+.mui-table-view.msg p{position: absolute;bottom: 0;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 13px;color: #999;}
+.mui-table-view-cell:after{left:21%}
+/*消息正文*/
+.msg-content{padding: 0.3rem 0.64rem;}
+.msg-content h1{line-height: 24px;margin-bottom: 0;}
+.msg-content span:first-of-type{color: #999;}
+.msg-content span:last-of-type{color: #a1887f;padding-left: 10px;}
+.msg-content img{width: 100%;margin: 10px 0;}
+.msg-content p{color: #666;line-height: 20px;}
+/*员工中心*/
+a.grxx1{height: 44px;}
+div.grxx1{height: 3.25rem;}
+div.grxx1 .grxx1a i{float: left;line-height: 2.7rem;margin: 0 0.2rem 0 0.5rem;color: #bcaaa4;}
+a.grxx1 .grxx1a i{float: left;line-height: 44px;margin: 0 0.2rem 0 0.5rem;color: #bcaaa4;}
+a.grxx1 .grxx1a{line-height: 44px;height: 44px;}
+a.grxx1 .grxx1b{height: 44px;line-height: 44px;}
+a.grxx1 .grxx1b input{height: 44px;margin-bottom: 0;background: none;}
+a.grxx1 .grxx1b .icons-qiehuan{margin-top: .6rem;}
+a.grxx1 .grxx1b i.mui-icon-arrowright{margin-right: -0.5rem;color: #999;}
+.grxx1 .grxx1b i.mui-icon-arrowright{margin-right: -0.5rem;color: #999;}
+.gr_active:active{background: #fafafa;}
+.grxx1 .grxx1b{width: auto !important;}
+.grxx1 .grxx1a{width: auto !important;}
+.grxx1b1{width: auto !important;}
+.grxx1 .grxx1b input{width: auto !important;text-align: right;}
+/*修改密码*/
+.register ul li label i{color: #bcaaa4;font-size: 26px;}
+.register ul li input.aput,.register ul li .aputw{margin-left: 0;}
+.register ul li label{width: auto !important;}

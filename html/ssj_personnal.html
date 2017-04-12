@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>随机抽查与综合执法系统</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/company.css" />
+	</head>
+
+	<body>
+		<div class="min_box">
+			<!--header-->
+			<header class="mui-bar mui-bar-nav">
+				<h1 class="mui-title">个人中心</h1>
+			</header>
+			<!--header-->
+			<div class="mui-content">
+				<div class="min_box mui-scroll-wrapper mui-wrapper-height" style="margin-bottom: 0;">
+					<div class="mui-scroll">
+						<div class="grxx1">
+							<div class="grxx1a">
+								<i class="mui-icon mui-icon-photo"></i>
+								<span>头像</span>
+							</div>
+							<a class="grxx1b" href="#forward">
+								<img src="../assets/img/toux.png" id="preview">
+								<i class="mui-icon mui-icon-arrowright"></i>
+							</a>
+					</div>
+					<a class="grxx1">
+						<div class="grxx1a">
+							<i class="mui-icon mui-icon-name"></i>
+							<span>姓名</span>
+						</div>
+						<div class="grxx1b">
+							<input type="text" value="王通" />
+						</div>
+					</a>
+					<a class="grxx1">
+						<div class="grxx1a">
+							<i class="mui-icon mui-icon-phone"></i>
+							<span>电话</span>
+						</div>
+						<div class="grxx1b grxx1b1">
+							<input type="text" value="13308980898" />
+						</div>
+					</a>
+					<a class="grxx1">
+						<div class="grxx1a">
+							<i class="mui-icon mui-icon-girl"></i>
+							<i class="mui-icon mui-icon-boy"></i>
+							<span>性别</span>
+						</div>
+						<div class="grxx1b">
+							<span class="mhright">
+		  				   	 <div id="M_Toggle" class="mui-switch mui-active" style="margin-top:.3rem; line-height: 22px;">
+							    <div class="mui-switch-handle"></div>
+						     </div>
+		  				   </span>
+						</div>
+					</a>
+					<a class="grxx1 gr_active" href="ssj_reset_psw.html">
+						<div class="grxx1a">
+							<i class="mui-icon mui-icon-lock"></i>
+							<span>修改密码</span>
+						</div>
+						<div class="grxx1b">
+							<i class="mui-icon mui-icon-arrowright"></i>
+						</div>
+					</a>
+					<div class="grxx_btn">
+						<a class="grxx_btn1" href="#suces">保存</a>
+						<a class="grxx_btn2">退出当前账号</a>
+					</div>
+					<div class="block_7"></div>
+				</div>
+			
+			</div>
+		</div>
+		</div>
+		<!--底部-->
+           	<footer class=" mui-bar-footer" >
+			<ul class="footer_ul">
+				<li>
+					<a href="ssj_index.html" >
+						<span class="icons-index"></span>
+						<span>工作</span>
+					</a>
+				</li>
+				<li  >
+					<a href="ssj_address_list.html">
+						<span class="icons-shop"></span>
+						<span>通讯录</span>
+					</a>
+
+				</li>
+				<li class="on">
+					<a href="wywx_personnel.html" >
+						<span class="icons-cart"></span>
+						<span>个人中心</span>
+					</a>
+
+				</li>
+				
+			</ul>
+		</footer>
+			<!--弹出框  上传-->
+				<div id="forward" class="mui-popover mui-popover-action mui-popover-bottom">
+					<div class="boxCont">
+						<!--list-->
+						<div class="list">
+							<ol>
+								<li>
+									<a href="#"><span class="icphotos"></span>拍照</a>
+									<input type="file" class="boxhide" name="file_head" id="file_head" onchange="javascript:setImagePreview();" capture="camera">
+
+								</li>
+								<div class="clear"></div>
+								<li>
+									<a href="#"><span class="ics-photon"></span>从相册选择</a>
+									<input name="file_head1" id="file_head1" onchange="javascript:setImagePreview1();" type="file" class="boxhide" accept="image/*">
+								</li>
+								<li><a href="#forward">取消</a></li>
+							</ol>
+						</div>
+						<!--//list-->
+					</div>
+				</div>
+			
+		<script src="../assets/js/mui.min.js"></script>
+		<script src="../assets/js/jquery-min.js"></script>
+		<script src="../assets/js/wap.js"></script>
+		<script src="../assets/js/script.js"></script>
+		<script type="text/javascript">
+			$('.grxx1a i.mui-icon-boy').hide();
+			$('#M_Toggle').click(function(){
+				var $t = $('#M_Toggle');
+				if($t.hasClass('mui-active')){
+					$('.grxx1a i.mui-icon-boy').hide();
+					$('.grxx1a i.mui-icon-girl').show();
+				}else{
+					$('.grxx1a i.mui-icon-girl').hide();
+					$('.grxx1a i.mui-icon-boy').show();
+				}
+			})
+		</script>
+	</body>
+
+</html>

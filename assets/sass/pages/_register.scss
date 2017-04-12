@@ -1,0 +1,105 @@
+//register
+.register{
+    margin-top: .75rem;
+    ul{
+        li{
+            padding: 0 1rem;
+            background-color: #fff;
+            height: 44px;
+            border-bottom: 2px solid #f5f5f5;
+            position: relative;
+            .post{
+                position: absolute;
+                right: 0;
+                width: 30%;
+                i{
+                    color: #F5F5F5;
+                    font-size: 20px;
+                    position: relative;
+                    left: -10px;
+                }
+                .aputz{
+                    display: inline-block;
+                    width: 90%;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 7px;
+                    border: none;
+                    font-size: 16px;
+                    color: #666;
+                    text-indent: 3px;
+                    cursor: pointer;
+                }
+            }
+           
+            
+            label{
+                margin-top: 8px;
+                float: left;
+                width: 25px;
+                height: 30px;
+            }
+            input.aput{
+                float: left;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 7px;
+                margin-left: 15px;
+                width: 80%;
+                border: none;
+                font-size: 16px;
+                color: #999;
+                margin-bottom:0px;
+            }
+            .aputw{
+                float: left;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 7px;
+                margin-left: 15px;
+                width: 50%;
+                border: none;
+                font-size: 16px;
+                color: #999;
+                  margin-bottom:0px;
+            }
+        }
+    }
+}
+
+.resm{
+    text-align: center;
+    padding-top: .75rem;
+    a{
+        color: #999;
+        font-size: 16px;
+        
+        &:hover{
+            color: #3baefc;
+        }
+    }
+}
+
+.logincon{
+    padding-top: 9rem;
+    text-align: center;
+    a{
+        font-size: 16px;
+        color: #666;
+        
+        &:hover{
+            color: #3baefc;
+            .iconsp-lg{
+                @include appicon(0,-73px);
+            }
+        }
+        
+        span{
+            position: relative;
+            top: 10px;
+        }
+    }
+}
+.okbtn{
+    background-color:#ffcb27 !important;
+}

@@ -1,0 +1,148 @@
+//guide-details
+.guide-details{
+    padding: 0 .75rem;
+    .title{
+        padding: .75rem 0;
+        border-bottom: dashed 1px #ebebeb;
+        h3{
+            font-size: $font-size + 2;
+            color: #333;
+        }
+        p{
+            font-size: $font-size;
+            padding-top: .5rem;
+            color: #999;
+            font-size: 15px;
+        } 
+    }
+}
+
+.guide-details{
+    .copyreader{
+        padding-top: .75rem;
+        line-height: 22px;
+        color: #666;
+    }
+}
+
+
+.detailsMon{
+    line-height: 22px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+//title-deta
+.title-deta{
+    padding: 0 .75rem;
+    height: 44px;
+    line-height: 44px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    color: #333;
+     
+}
+
+.show-deta{
+    background-color: #fff;
+    padding: .75rem;
+    line-height: 22px;
+    color: #666;
+    font-size: 14px;
+    
+    .show{
+        margin-top: .75rem;
+    }
+    
+   
+}
+
+.cnteacon{
+    margin-top: .5rem;
+    padding: .4rem .1rem;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    border-right: none;
+    
+    &:hover{
+        background-color: #fafafa;
+    }
+    
+    .pic{
+        float: left;
+        width: 9.5rem;
+        a{
+            display: block;
+            float: left;
+            width: 1.7rem;
+            height: 1.7rem;
+            margin-left: .2rem;
+            img{
+              width: 1.7rem;
+              height: 1.7rem;
+              border-radius: 50%;
+              
+            }
+        }
+    }
+    .text{
+        float: right;
+        width: 5.5rem;
+        
+        a{
+            float: right;
+            font-size: 12px;
+            display: block;
+            margin-top: .75rem;
+            color: #666;            
+           .jtou{
+            width: 13px;
+            height: 13px;
+            background: url(../img/jtou.jpg) no-repeat;
+            display: block;
+            background-size: contain;
+            float: right;
+            margin-left: 3px;
+           }
+        }
+        
+    }
+}
+
+.joinadd{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    background-color: #3baefc;
+    a{
+        color: #fff;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+    }
+}
+
+
+#box a{ 
+    background:url(../img/t1.png) no-repeat right center;  
+    text-align: center;  
+    display: block;
+    width: 70px;
+    position: relative;
+    top: 10px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    color: #666;
+      
+ }
+#box a.test{
+    background:url(../img/t1n.png) no-repeat right;
+
+}

@@ -1,0 +1,164 @@
+//login
+.login {
+    width: 100%;
+    .longbar {
+        //height: 16.825rem;
+        text-align: center;
+        img {
+            text-align: center;
+            width: 5.975rem;
+            margin: 0 auto 18%;
+            padding-top: 19%;
+        }
+    }
+}
+.actionma {
+    ul {
+        li {
+            padding: 0 1rem;
+            border-bottom: 2px solid #ececec;
+            height: 44px;
+            label {
+                margin-top: 8px;
+                float: left;
+                width: 25px;
+                height: 30px;
+                i {
+                    color: #e0e0e0;
+                    font-size: 30px;
+                      line-height: 30px;
+                }
+            }
+            input {
+                float: left;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 7px;
+                width: 80%;
+                border: none;
+                font-size: 16px;
+                color: #999;
+                background: none;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.passwordCont,
+.ye_right {
+    padding: 0.5rem 1rem 0;
+    a {
+        color: #999;
+        font-size: 16px;
+        line-height: 30px;
+        &:hover {
+            text-decoration: underline;
+            color: #3baefc;
+        }
+    }
+    input {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .check_label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .checkbox_icon {
+        float: left;
+        display: block;
+        width: 30px;
+        height: 29px;
+        line-height: 1;
+        background: url("../img/sp.png") no-repeat 0 -22px;
+        background-size: 144px auto;
+        overflow: hidden;
+    }
+    .check_label.on .checkbox_icon {
+        background-position: 0 4px;
+    }
+    .checkbox_text {
+        float: left;
+        padding-left: 5px;
+        height: 29px;
+        line-height: 29px;
+        font-size: 16px;
+        color: #999;
+    }
+}
+.ye_right {
+    padding: 0.2rem 0.5rem 1rem 0;
+    a {
+        color: #fff;
+        font-size: 16px;
+        line-height: 30px;
+        &:hover {
+            text-decoration: underline;
+            color: #3baefc;
+        }
+    }
+    input {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .check_label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .checkbox_icon {
+        float: left;
+        display: block;
+        width: 30px;
+        height: 29px;
+        line-height: 1;
+        background: url("../img/sp.png") no-repeat 0 -23px;
+        background-size: 144px auto;
+        overflow: hidden;
+        background-position: 0 -239px;
+    }
+    .check_label.on .checkbox_icon {
+        background-position: 0 -266px;
+    }
+    .checkbox_text {
+        float: left;
+        padding-left: 5px;
+        height: 29px;
+        line-height: 29px;
+        font-size: 16px;
+        color: #fff;
+    }
+}
+.binq {
+    padding: 0 1rem;
+    input {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        margin-top: 1.425rem;
+        height: 44px;
+        line-height: 44px;
+        background-color: #3baefc;
+        border-radius: 35px;
+        color: #fff;
+        font-size: 17px;
+        border: none;
+        margin-bottom: 5%;
+        &:hover,
+        &:active {
+            background-color: #39abf7;
+        }
+        &:disabled {
+            background-color: #f9c518;
+            color: $link-white;
+            border: 1px solid #f9c518;
+            @include opacity(.5);
+        }
+    }
+}
+.relc {
+    margin-top: 4.6rem;
+    text-align: center;
+    height: 30px;
+}
